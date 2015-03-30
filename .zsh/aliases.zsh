@@ -136,6 +136,12 @@ alias httpdump="sudo tcpdump -i en1 -n -s 0 -w - | grep -a -o -E \"Host\: .*|GET
 #Web Serve
 alias macvhost="sudo vim /etc/apache2/extra/httpd-vhosts.conf"
 
+#Composer
+alias composer="php /usr/bin/composer.phar"
+
+#Grunt
+alias gruntit="npm install grunt --save-dev"
+
 # -------------------------------------------------------------------
 # MakeMacBetter aliases
 # -------------------------------------------------------------------

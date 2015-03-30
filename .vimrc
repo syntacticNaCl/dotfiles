@@ -4,6 +4,7 @@ colorscheme atom-dark-256
 filetype plugin indent on
 set number
 set wildmenu
+set shell=/bin/zsh
 
 autocmd vimenter * NERDTree
 map <C-t> :NERDTreeToggle<CR>

@@ -50,3 +50,14 @@ git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$H
 if [[ ! $(echo $SHELL) == $(which zsh) ]]; then
     chsh -s $(which zsh)
 fi
+
+#install dev stuff
+echo "Installing and moving composer..."
+curl -sS https://getcomposer.org/installer | php
+sudo mv composer.phar /usr/bin/
+
+echo "Installing grunt-cli..."
+sudo npm install -g grunt-cli
+
+echo "Installing sass..."
+sudo gem install sass

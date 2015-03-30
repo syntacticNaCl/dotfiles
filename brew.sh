@@ -17,9 +17,7 @@ brew update
 binaries=(
     ant
     cmake
-    composer
     cowsay
-    elasticsearch
     fortune
     git
     imap-uw
@@ -32,13 +30,9 @@ binaries=(
     ngrep
     node
     pcre
-    php54
-    phpmyadmin
     python
     subversion
-    tcpdump
     tmux
-    vim
     wget
     wxmac
     youtube-dl
@@ -68,7 +62,7 @@ apps=(
   flash
   iterm2
   shiori
-  sublime-text3
+  sublime-text
   virtualbox
   keepassx
   atom
@@ -86,6 +80,7 @@ apps=(
   teamviewer
   slate
   screenhero
+  spectacle
 )
 
 # Install apps to /Applications

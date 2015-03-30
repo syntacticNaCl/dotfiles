@@ -8,6 +8,8 @@
 
 dir=~/dotfiles                    # dotfiles directory
 olddir=~/dotfiles_old             # old dotfiles backup directory
+POWERLINE_FONTS_DIRECTORY="${HOME}/.powerline-fonts"
+PREZTO_DIRECTORY="${HOME}/.zprezto"
 files="exports gitinfo vimrc zpreztorc zprofile zshenv zshrc vim zprezto zsh fonts"    # list of files/folders to symlink in homedir
 
 ##########
@@ -29,6 +31,20 @@ for file in $files; do
     echo "Creating symlink to $file in home directory."
     ln -s $dir/.$file ~/.$file
 done
+
+# Clone Powerline fonts repo
+echo "Cloning 'powerline-fonts' repository..."
+git clone https://github.com/powerline/fonts.git "${ZDOTDIR:-$HOME}/dotfiles/"
+
+# Setup powerline-fonts
+echo "Configuring powerline-fonts..."
+cd ${POWERLINE_FONTS_DIRECTORY}
+./install.sh >/dev/null
+cd ${DOTFILES_DIRECTORY}
+
+# Clone the upstream Prezto repo
+echo "Cloning 'prezto' repository..."
+git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$HOME}/dotfiles/.zprezto"
 
 #change shell to zsh if set to something else
 if [[ ! $(echo $SHELL) == $(which zsh) ]]; then

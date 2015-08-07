@@ -78,6 +78,7 @@ alias tt='tt++ $HOME/.ttconf'
 
 #convert vi to vim
 alias vi="/usr/local/bin/vim"
+alias svi="sudo vim" # Run vim as super user
 alias svim="sudo vim" # Run vim as super user
 
 #Directory traversing
@@ -98,10 +99,9 @@ alias p="cd ~/projects"
 alias h="history"
 
 #Dir Lists
-alias lsa='ls -la'
+alias lsa='ls -lah'
 alias lsd="ls -ld *" # show directories
 alias tree="ls -R | grep ":$" | sed -e 's/:$//' -e 's/[^-][^\/]*\//--/g' -e 's/^/ /' -e 's/-/|/'"
-alias lsh='ls -lah' #show file sizes in human readable format
 alias ltd='ls *(m0)' # files & directories modified in last day
 alias lt='ls *(.m0)' # files (no directories) modified in last day
 alias lnew='ls *(.om[1,3])' # list three newest
@@ -124,7 +124,7 @@ alias iecurl="curl -H \"User-Agent: Mozilla/5.0 (Windows; U; MSIE 6.0; Windows N
 alias ffcurl="curl -H \"User-Agent: Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.9.0.8) Gecko/2009032609 Firefox/3.0.0 (.NET CLR 3.5.30729)\""
 
 alias grep='grep --color=auto' # Always highlight grep search term
-alias ping='ping -c 5'      # Pings with 5 packets, not unlimited
+#alias ping='ping -c 5'      # Pings with 5 packets, not unlimited
 
 alias iwconfig='iwconfig wlan0'
 alias exip='curl ip.appspot.com'
@@ -142,10 +142,30 @@ alias composer="php /usr/bin/composer.phar"
 #Grunt
 alias gruntit="npm install grunt --save-dev"
 
+#Compass watch
+alias bcwatch="bundle exec compass watch"
+
+#Vagrant
+alias vprovision="vagrant upgrade --provision"
+
+#Node
+alias npmi="sudo npm install"
+
+#Bower
+alias bowi="bower install"
+
+#Dev setup
+alias s8set="sudo npm install;bower install"
+
+# -------------------------------------------------------------------
+# Utilities
+# -------------------------------------------------------------------
+
+alias myssh = "pbcopy < ~/.ssh/id_rsa.pub"
+
 # -------------------------------------------------------------------
 # MakeMacBetter aliases
 # -------------------------------------------------------------------
-
 
 # Hide/show all desktop icons (useful when presenting)
 alias hidedesktop="defaults write com.apple.finder CreateDesktop -bool false &&
@@ -162,7 +182,9 @@ alias root='sudo -i'
 alias su='sudo -i'
 
 # apache (mac) #
+alias arestart='sudo apachectl restart' 
 alias astart='sudo apachectl start' 
+alias astatus='sudo apachectl status' 
 alias astop='sudo apachectl stop'
 
 # Get OS X Software Updates, and update installed Ruby gems, Homebrew, npm, and their installed packages

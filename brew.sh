@@ -21,6 +21,7 @@ binaries=(
     fortune
     git
     imap-uw
+    irssi
     jq
     libtool
     libxml2

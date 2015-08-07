@@ -3,11 +3,12 @@
 # -------------------------------------------------------------------
 
 export PATH=/usr/local/bin:$PATH
+export PATH=/usr/local/bin/zsh:$PATH
 
 # # PHP MAMP
 
 #export PATH="/Applications/MAMP/bin/php/php5.4.34/bin:$PATH"
-export PATH="/Applications/MAMP/bin/php/php5.3.29/bin:$PATH"
+#export PATH="/Applications/MAMP/bin/php/php5.3.29/bin:$PATH"
 
 # # MySQL
 export PATH="/usr/local/mysql/bin:$PATH"

@@ -76,8 +76,8 @@ alias cls='clear;echo "Currently logged in on $(tty), as $(whoami) in directory 
 alias cl='clear'
 alias tt='tt++ $HOME/.ttconf'
 
-#convert vi to vim
-alias vi="/usr/local/bin/vim"
+#convert vi to vim; LAAAZZZYYY
+alias vi="vim"
 alias svi="sudo vim" # Run vim as super user
 alias svim="sudo vim" # Run vim as super user
 
@@ -155,13 +155,13 @@ alias npmi="sudo npm install"
 alias bowi="bower install"
 
 #Dev setup
-alias s8set="sudo npm install;bower install"
+alias s8set="sudo npm install && bower install"
 
 # -------------------------------------------------------------------
 # Utilities
 # -------------------------------------------------------------------
 
-alias myssh = "pbcopy < ~/.ssh/id_rsa.pub"
+alias myssh="pbcopy < ~/.ssh/id_rsa.pub"
 
 # -------------------------------------------------------------------
 # MakeMacBetter aliases

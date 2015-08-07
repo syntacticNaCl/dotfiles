@@ -9,7 +9,7 @@ fi
 source ~/.zsh/aliases.zsh
 source ~/.zsh/functions.zsh
 source ~/.zsh/config.zsh
-#source ~/.zsh_secrets
+source ~/.zsh_secrets
 
 #------------------------------------------
 # COWSAY FORTUNE

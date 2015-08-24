@@ -101,3 +101,7 @@ dumpit() {
 	DATE=`date +%Y-%m-%d`
 	sudo mysqldump -u root -p $1 > $DATE-$1-local-dump.sql 
 }
+
+vcheck() {
+    openssl dgst -$1 $2
+}

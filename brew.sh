@@ -55,7 +55,7 @@ apps=(
   dropbox
   google-chrome
   slack
-  filezilla
+  forklift
   phpstorm
   firefox
   spotify

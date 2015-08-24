@@ -155,7 +155,7 @@ alias npmi="sudo npm install"
 alias bowi="bower install"
 
 #Dev setup
-alias s8set="sudo npm install && bower install"
+alias s8init="sudo npm install && bower install"
 
 # -------------------------------------------------------------------
 # Utilities

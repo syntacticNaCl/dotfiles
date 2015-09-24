@@ -50,10 +50,10 @@ export HISTIGNORE="ls:ls *:cd:cd -:pwd;exit:date:* --help"
 #     export EC2_CERT=`ls $EC2_HOME/cert-*.pem`
 # fi
 
-export JAVA6_HOME=`/usr/libexec/java_home -v 1.6`
+#export JAVA6_HOME=`/usr/libexec/java_home -v 1.6`
 export JAVA7_HOME=`/usr/libexec/java_home -v 1.7`
 export JAVA8_HOME=`/usr/libexec/java_home -v 1.8`
-export JAVA_HOME=$JAVA6_HOME
+#export JAVA_HOME=$JAVA6_HOME
 # export MAVEN_HOME=/usr/local/Cellar/maven/
 
 

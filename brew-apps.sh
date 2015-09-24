@@ -36,6 +36,7 @@ apps=(
   slate
   screenhero
   spectacle
+  libreoffice
 )
 
 # Install apps to /Applications

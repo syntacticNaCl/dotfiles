@@ -124,7 +124,7 @@ alias iecurl="curl -H \"User-Agent: Mozilla/5.0 (Windows; U; MSIE 6.0; Windows N
 alias ffcurl="curl -H \"User-Agent: Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.9.0.8) Gecko/2009032609 Firefox/3.0.0 (.NET CLR 3.5.30729)\""
 
 alias grep='grep --color=auto' # Always highlight grep search term
-#alias ping='ping -c 5'      # Pings with 5 packets, not unlimited
+alias ping='ping -c 5'      # Pings with 5 packets, not unlimited
 
 alias iwconfig='iwconfig wlan0'
 alias exip='curl ip.appspot.com'

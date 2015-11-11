@@ -1,7 +1,7 @@
 # -------------------------------------------------------------------
 # Git aliases
 # -------------------------------------------------------------------
- 
+
 alias ga='git add -A'
 alias gpush='git push'
 alias gpushom='git push origin master'
@@ -23,7 +23,7 @@ alias gf='git reflog'
 alias gstash='git stash'
 alias grefresh='git stash; git pull origin master'
 alias greset='git fetch --all; git reset --hard origin/master'
- 
+
 # -------------------------------------------------------------------
 # SVN aliases
 # -------------------------------------------------------------------
@@ -43,7 +43,7 @@ alias svnun='sudo svn status | grep ^?'
 # -------------------------------------------------------------------
 # Cordova aliases
 # -------------------------------------------------------------------
- 
+
 alias cba='cordova build android'
 alias cea='cordova emulate android'
 alias crdroid='cordova platform rm android'
@@ -64,7 +64,7 @@ alias stgv="sencha generate view"
 alias stgm="sencha generate model"
 alias sab="sencha app build"
 alias sabp="sencha app build production"
- 
+
 # -------------------------------------------------------------------
 # Directory aliases
 # -------------------------------------------------------------------
@@ -137,7 +137,7 @@ alias httpdump="sudo tcpdump -i en1 -n -s 0 -w - | grep -a -o -E \"Host\: .*|GET
 alias macvhost="sudo vim /etc/apache2/extra/httpd-vhosts.conf"
 
 #Composer
-alias composer="php /usr/bin/composer.phar"
+alias composer="php /usr/local/bin/composer"
 
 #Grunt
 alias gruntit="npm install grunt --save-dev"
@@ -182,9 +182,9 @@ alias root='sudo -i'
 alias su='sudo -i'
 
 # apache (mac) #
-alias arestart='sudo apachectl restart' 
-alias astart='sudo apachectl start' 
-alias astatus='sudo apachectl status' 
+alias arestart='sudo apachectl restart'
+alias astart='sudo apachectl start'
+alias astatus='sudo apachectl status'
 alias astop='sudo apachectl stop'
 
 # Get OS X Software Updates, and update installed Ruby gems, Homebrew, npm, and their installed packages

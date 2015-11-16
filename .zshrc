@@ -15,5 +15,5 @@ source ~/.zsh_secrets
 # COWSAY FORTUNE
 #------------------------------------------
 if [ -x /usr/local/bin/cowsay -a -x /usr/local/bin/fortune ]; then
-	    fortune | cowsay
+	    fortune | cowsay -f vader
 fi

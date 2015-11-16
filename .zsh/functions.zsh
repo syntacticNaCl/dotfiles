@@ -105,3 +105,15 @@ dumpit() {
 vcheck() {
     openssl dgst -$1 $2
 }
+
+## File searching
+
+# find word in files
+grepf() {
+    grep -rnw $1 -e "$2"
+}
+
+# find count of word in files
+grepfc() {
+    grep -rnw $1 -e "$2" | wc -l
+}

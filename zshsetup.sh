@@ -67,7 +67,13 @@ sudo gem install sass
 if [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]; then
     echo "Installing i3..."
     sudo apt-get install i3 i3lock
-
+    
+    echo "Installing dmenu..."
+    sudo apt-get install dmenu
+    
+    echo "Installing ranger..."
+    sudo apt-get install ranger
+    
     echo "Moving i3 configs..."
     for nixfile in $nixfiles; do
 	echo "Moving any existing dotfiles from ~ to $olddir"

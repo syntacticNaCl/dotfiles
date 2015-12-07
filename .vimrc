@@ -1,33 +1,32 @@
 set nocompatible
 " Vundle setup
 filetype off
-set runtimepath+=~/dotfiles/.vim/bundle/Vundle.vim
-call vundle#rc()
-
-Bundle 'gmarik/vundle'
+call plug#begin('~/.vim/plugged')
 
 " Plugins
-Plugin 'kien/ctrlp.vim'
-Plugin 'mattn/emmet-vim'
-Plugin 'sjl/gundo.vim'
-Plugin 'scrooloose/nerdcommenter'
-Plugin 'scrooloose/nerdtree'
-Plugin 'StanAngeloff/php.vim'
-Plugin 'shawncplus/phpcomplete.vim'
-Plugin 'junegunn/seoul256.vim'
-Plugin 'scrooloose/syntastic'
-Plugin 'godlygeek/tabular'
-Plugin 'tomtom/tcomment_vim'
-Plugin 'bling/vim-airline'
-Plugin 'altercation/vim-colors-solarized'
-Plugin 'Lokaltog/vim-easymotion'
-Plugin 'tpope/vim-fugitive'
-Plugin 'airblade/vim-gitgutter'
-Plugin 'nathanaelkane/vim-indent-guides'
-Plugin 'pangloss/vim-javascript'
-Plugin 'groenewege/vim-less'
-Plugin 'tpope/vim-sensible'
-Plugin 'tpope/vim-surround'
+Plug 'kien/ctrlp.vim'
+Plug 'mattn/emmet-vim'
+Plug 'sjl/gundo.vim'
+Plug 'scrooloose/nerdcommenter'
+Plug 'scrooloose/nerdtree'
+Plug 'StanAngeloff/php.vim'
+Plug 'shawncplus/phpcomplete.vim'
+Plug 'junegunn/seoul256.vim'
+Plug 'scrooloose/syntastic'
+Plug 'godlygeek/tabular'
+Plug 'tomtom/tcomment_vim'
+Plug 'bling/vim-airline'
+Plug 'altercation/vim-colors-solarized'
+Plug 'Lokaltog/vim-easymotion'
+Plug 'tpope/vim-fugitive'
+Plug 'airblade/vim-gitgutter'
+Plug 'nathanaelkane/vim-indent-guides'
+Plug 'pangloss/vim-javascript'
+Plug 'groenewege/vim-less'
+Plug 'tpope/vim-sensible'
+Plug 'tpope/vim-surround'
+
+call plug#end()
 
 " GENERAL SETTINGS
 syntax on
@@ -73,7 +72,7 @@ map <F8> :tabn<CR>
 let NERDTreeShowHidden=1
 
 " SOURCES
-source ~/dotfiles/.vim/bundle/matchit.zip/plugin/matchit.vim
+" source ~/dotfiles/.vim/bundle/matchit.zip/plugin/matchit.vim
 
 " SYNTASTIC SETTINGS
 set statusline+=%#warningmsg#

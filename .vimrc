@@ -1,4 +1,33 @@
-execute pathogen#infect()
+set nocompatible
+" Vundle setup
+filetype off
+set runtimepath+=~/.vim/bundle/vundle
+call vundle#rc()
+
+Bundle 'gmarik/vundle'
+
+" Plugins
+Plugin ‘kien/ctrlp.vim’
+Plugin ‘mattn/emmet-vim’
+Plugin ‘sjl/gundo.vim’
+Plugin ‘scrooloose/nerdcommenter’
+Plugin ‘scrooloose/nerdtree’
+Plugin ‘StanAngeloff/php.vim’
+Plugin ‘shawncplus/phpcomplete.vim’
+Plugin ‘junegunn/seoul256.vim’
+Plugin ‘scrooloose/syntastic’
+Plugin ‘godlygeek/tabular’
+Plugin ‘tomtom/tcomment_vim’
+Plugin ‘bling/vim-airline’
+Plugin ‘altercation/vim-colors-solarized’
+Plugin ‘Lokaltog/vim-easymotion’
+Plugin ‘tpope/vim-fugitive’
+Plugin ‘airblade/vim-gitgutter’
+Plugin ‘nathanaelkane/vim-indent-guides’
+Plugin ‘pangloss/vim-javascript’
+Plugin ‘groenewege/vim-less’
+Plugin ‘tpope/vim-sensible’
+Plugin ‘tpope/vim-surround’
 
 " GENERAL SETTINGS
 syntax on
@@ -29,7 +58,7 @@ set ruler	" Show row and column ruler information
 
 set undolevels=1000	" Number of undo levels
 set backspace=indent,eol,start	" Backspace behaviour
-let javascript_enable_domhtmlcss=1 
+let javascript_enable_domhtmlcss=1
 
 " THEME
 " colorscheme atom-dark-256

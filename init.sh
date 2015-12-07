@@ -10,7 +10,7 @@ dir=~/dotfiles                    # dotfiles directory
 olddir=~/dotfiles_old             # old dotfiles backup directory
 POWERLINE_FONTS_DIRECTORY="${HOME}/.powerline-fonts"
 PREZTO_DIRECTORY="${HOME}/.zprezto"
-files="exports gitinfo vimrc zpreztorc zprofile zshenv zshrc vim zprezto zsh fonts"    # list of files/folders to symlink in homedir
+files="exports gitinfo vimrc zpreztorc zprofile zshenv zshrc vim zprezto zsh fonts tmux.conf"    # list of files/folders to symlink in homedir
 nixfiles="i3" #list of files that should be installed on nix systems only
 
 ##########
@@ -33,6 +33,10 @@ for file in $files; do
     ln -s $dir/.$file ~/.$file
 done
 
+# hack for neovim??
+cp -rf $dir/.nvim ~/.config/nvim
+cp $dir/.nvimrc ~/.config/nvim/init.vim
+
 # Clone Powerline fonts repo
 echo "Cloning 'powerline-fonts' repository..."
 git clone https://github.com/powerline/fonts.git "${ZDOTDIR:-$HOME}/dotfiles/"
@@ -52,21 +56,25 @@ if [[ ! $(echo $SHELL) == $(which zsh) ]]; then
     chsh -s $(which zsh)
 fi
 
-#install dev stuff
-echo "Installing and moving composer..."
-curl -sS https://getcomposer.org/installer | php
-sudo mv composer.phar /usr/bin/
+# Test if Composer is installed
+composer -v > /dev/null 2>&1
+COMPOSER_IS_INSTALLED=$?
 
-echo "Installing grunt-cli..."
-sudo npm install -g grunt-cli
-
-echo "Installing sass..."
-sudo gem install sass
+# True, if composer is not installed
+if [[ $COMPOSER_IS_INSTALLED -ne 0 ]]; then
+    echo ">>> Installing Composer"
+    # Install Composer
+    curl -sS https://getcomposer.org/installer | php
+    sudo mv composer.phar /usr/local/bin/composer
+else
+    echo ">>> Updating Composer"
+    composer self-update
+fi
 
 # Linux Only
 if [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]; then
     echo "Updating, then installing i3, dmenu, ranger and terminator..."
-    sudo apt-get update && sudo apt-get install i3 i3lock dmenu ranger terminator 
+    sudo apt-get update && sudo apt-get install i3 i3lock dmenu ranger terminator
 
     echo "Moving i3 configs..."
     for nixfile in $nixfiles; do

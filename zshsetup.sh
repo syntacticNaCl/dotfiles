@@ -11,6 +11,7 @@ olddir=~/dotfiles_old             # old dotfiles backup directory
 POWERLINE_FONTS_DIRECTORY="${HOME}/.powerline-fonts"
 PREZTO_DIRECTORY="${HOME}/.zprezto"
 files="exports gitinfo vimrc zpreztorc zprofile zshenv zshrc vim zprezto zsh fonts"    # list of files/folders to symlink in homedir
+nixfiles="i3" #list of files that should be installed on nix systems only
 
 ##########
 
@@ -61,3 +62,20 @@ sudo npm install -g grunt-cli
 
 echo "Installing sass..."
 sudo gem install sass
+
+# Linux Only
+if [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]; then
+    echo "Updating, then installing i3, dmenu, ranger and terminator..."
+    sudo apt-get update && sudo apt-get install i3 i3lock dmenu ranger terminator 
+
+    echo "Moving i3 configs..."
+    for nixfile in $nixfiles; do
+	echo "Moving any existing dotfiles from ~ to $olddir"
+	mv ~/.$nixfile ~/dotfiles_old/
+	echo "Creating symlink to $nixfile in home directory."
+	ln -s $dir/.$nixfile ~/.$nixfile
+    done
+    #copy terminator config
+    #TODO need a more elegant solution for this... but im tired and i want to go to bed, duh duh duh
+    cp -r $dir/.config/terminator ~/.config
+fi

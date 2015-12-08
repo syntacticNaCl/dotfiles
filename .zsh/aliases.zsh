@@ -78,6 +78,7 @@ alias tt='tt++ $HOME/.ttconf'
 
 #convert vi to vim; LAAAZZZYYY
 alias vi="nvim"
+alias vim="nvim"
 alias svi="sudo nvim" # Run nvim as super user
 alias svim="sudo nvim" # Run nvim as super user
 

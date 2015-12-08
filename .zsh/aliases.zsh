@@ -77,9 +77,9 @@ alias cl='clear'
 alias tt='tt++ $HOME/.ttconf'
 
 #convert vi to vim; LAAAZZZYYY
-alias vi="vim"
-alias svi="sudo vim" # Run vim as super user
-alias svim="sudo vim" # Run vim as super user
+alias vi="nvim"
+alias svi="sudo nvim" # Run nvim as super user
+alias svim="sudo nvim" # Run nvim as super user
 
 #Directory traversing
 alias ..='cd ..'

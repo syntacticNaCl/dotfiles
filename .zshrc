@@ -14,7 +14,7 @@ source ~/.zsh_secrets
 #------------------------------------------
 # STARTUP
 #------------------------------------------
-if [ -x /usr/local/bin/screenfetch ]; then
+if [ -x /usr/local/bin/screenfetch -o -x /usr/bin/screenfetch ]; then
     screenfetch
 elif [ -x /usr/local/bin/cowsay -a -x /usr/local/bin/fortune ]; then
     fortune | cowsay -f vader

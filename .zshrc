@@ -12,8 +12,12 @@ source ~/.zsh/config.zsh
 source ~/.zsh_secrets
 
 #------------------------------------------
-# COWSAY FORTUNE
+# STARTUP
 #------------------------------------------
-if [ -x /usr/local/bin/cowsay -a -x /usr/local/bin/fortune ]; then
-	    fortune | cowsay -f vader
+if [ -x /usr/local/bin/screenfetch ]; then
+    screenfetch
+elif [ -x /usr/local/bin/cowsay -a -x /usr/local/bin/fortune ]; then
+    fortune | cowsay -f vader
 fi
+
+

@@ -1,4 +1,32 @@
-execute pathogen#infect()
+set nocompatible
+" Vundle setup
+filetype off
+call plug#begin('~/.vim/plugged')
+
+" Plugins
+Plug 'kien/ctrlp.vim'
+Plug 'mattn/emmet-vim'
+Plug 'sjl/gundo.vim'
+Plug 'scrooloose/nerdcommenter'
+Plug 'scrooloose/nerdtree'
+Plug 'StanAngeloff/php.vim'
+Plug 'shawncplus/phpcomplete.vim'
+Plug 'junegunn/seoul256.vim'
+Plug 'scrooloose/syntastic'
+Plug 'godlygeek/tabular'
+Plug 'tomtom/tcomment_vim'
+Plug 'bling/vim-airline'
+Plug 'altercation/vim-colors-solarized'
+Plug 'Lokaltog/vim-easymotion'
+Plug 'tpope/vim-fugitive'
+Plug 'airblade/vim-gitgutter'
+Plug 'nathanaelkane/vim-indent-guides'
+Plug 'pangloss/vim-javascript'
+Plug 'groenewege/vim-less'
+Plug 'tpope/vim-sensible'
+Plug 'tpope/vim-surround'
+
+call plug#end()
 
 " GENERAL SETTINGS
 syntax on
@@ -29,7 +57,7 @@ set ruler	" Show row and column ruler information
 
 set undolevels=1000	" Number of undo levels
 set backspace=indent,eol,start	" Backspace behaviour
-let javascript_enable_domhtmlcss=1 
+let javascript_enable_domhtmlcss=1
 
 " THEME
 " colorscheme atom-dark-256
@@ -47,7 +75,7 @@ vmap <C-C> "+y
 let NERDTreeShowHidden=1
 
 " SOURCES
-source ~/dotfiles/.vim/bundle/matchit.zip/plugin/matchit.vim
+" source ~/dotfiles/.vim/bundle/matchit.zip/plugin/matchit.vim
 
 " SYNTASTIC SETTINGS
 set statusline+=%#warningmsg#
@@ -58,3 +86,4 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
+let g:ctrlp_show_hidden = 1

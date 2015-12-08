@@ -41,6 +41,9 @@ autocmd vimenter * NERDTree
 map <C-t> :NERDTreeToggle<CR>
 map <F7> :tabp<CR>
 map <F8> :tabn<CR>
+nmap <C-V> "+gP
+imap <C-V> <ESC><C-V>i
+vmap <C-C> "+y 
 let NERDTreeShowHidden=1
 
 " SOURCES

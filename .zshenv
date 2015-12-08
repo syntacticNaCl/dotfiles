@@ -4,12 +4,18 @@
 
 export PATH=/usr/local/bin:$PATH
 export PATH=/usr/local/bin/zsh:$PATH
+export PATH=/usr/bin/nodejs:$PATH
 
 # # MySQL
 export PATH="/usr/local/mysql/bin:$PATH"
 
 # # ANT
 export PATH="/usr/share/ant/bin/ant:$PATH"
+
+## Ruby
+export PATH="$HOME/.rbenv/bin:$PATH"
+eval "$(rbenv init -)"
+export PATH="$HOME/.rbenv/plugins/ruby-build/bin:$PATH"
 
 # Ensure that a non-login, non-interactive shell has a defined environment.
 if [[ "$SHLVL" -eq 1 && ! -o LOGIN && -s "${ZDOTDIR:-$HOME}/.zprofile" ]]; then

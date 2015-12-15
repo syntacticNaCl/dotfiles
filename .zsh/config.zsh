@@ -89,3 +89,6 @@ setopt EXTENDED_GLOB
 # hows about arrays be awesome?  (that is, frew${cool}frew has frew surrounding all the variables, not just first and last
 setopt RC_EXPAND_PARAM
  
+# fix color issues in tmux
+export TERM=xterm-256color
+[ -n "$TMUX" ] && export TERM=screen-256color

@@ -27,7 +27,7 @@ Plug 'joonty/vdebug'
 Plug 'fholgado/minibufexpl.vim'
 Plug 'captbaritone/better-indent-support-for-php-with-html'
 Plug 'rking/ag.vim'
-Plug 'ryanoasis/vim-devicons'
+" Plug 'ryanoasis/vim-devicons'
 
 " Theme Plugins
 Plug 'junegunn/seoul256.vim'
@@ -108,10 +108,6 @@ map <C-t> :NERDTreeToggle<CR>
 map <F7> :tabp<CR>
 map <F8> :tabn<CR>
 let NERDTreeShowHidden=1
-
-set encoding=utf8
-let g:airline_powerline_fonts = 1
-set guifont=Droid\ Sans\ Mono\ for\ Powerline\ Plus\ Nerd\ File\ Types:h11
 
 " SOURCES
 " source ~/dotfiles/.vim/bundle/matchit.zip/plugin/matchit.vim

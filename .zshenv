@@ -12,10 +12,12 @@ export PATH="/usr/local/mysql/bin:$PATH"
 # # ANT
 export PATH="/usr/share/ant/bin/ant:$PATH"
 
+if [[ "$OSTYPE" == "linux"* ]]; then
 ## Ruby
 export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
 export PATH="$HOME/.rbenv/plugins/ruby-build/bin:$PATH"
+fi
 
 # Ensure that a non-login, non-interactive shell has a defined environment.
 if [[ "$SHLVL" -eq 1 && ! -o LOGIN && -s "${ZDOTDIR:-$HOME}/.zprofile" ]]; then
@@ -34,6 +36,11 @@ export SHELL="/usr/local/bin/zsh"
 export HISTSIZE=32768
 export HISTFILESIZE=$HISTSIZE
 export HISTCONTROL=ignoredups
+
+# fix render issues
+export LC_ALL=en_US.UTF-8  
+export LANG=en_US.UTF-8
+
 # Make some commands not show up in history
 export HISTIGNORE="ls:ls *:cd:cd -:pwd;exit:date:* --help"
 

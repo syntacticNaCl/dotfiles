@@ -34,6 +34,7 @@ Plug 'junegunn/seoul256.vim'
 Plug 'croaker/mustang-vim'
 Plug 'altercation/vim-colors-solarized'
 Plug 'sickill/vim-monokai'
+Plug 'shawncplus/skittles_berry'
 
 " Language Specific
 Plug 'mattn/emmet-vim'
@@ -49,19 +50,24 @@ Plug 'tpope/vim-haml'
 Plug 'skammer/vim-css-color'
 Plug 'Shutnik/jshint2.vim'
 Plug 'groenewege/vim-less', { 'for': 'less' }
+Plug 'evidens/vim-twig', { 'for': 'twig' }
 
 " Experimental
-" Plug 'sirver/ultisnips'
 " Plug 'weierophinney/argumentrewrap'
 Plug 'valloric/MatchTagAlways'
-" Plug 'Shougo/deoplete.nvim' disabled until there is more support
-
+Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer' }
+Plug 'sirver/ultisnips'
+Plug 'honza/vim-snippets'
+Plug 'nathanaelkane/vim-indent-guides'
+Plug 'sjl/splice.vim'
+Plug 'ervandew/supertab'
 
 call plug#end()
 
 " GENERAL SETTINGS
 syntax on
-filetype plugin indent on
+filetype plugin on
+filetype indent on
 set number
 set shell=/bin/zsh
 
@@ -75,6 +81,7 @@ set visualbell	" Use visual bell (no beeping)
 
 set hlsearch	" Highlight all search results
 set smartcase	" Enable smart-case search
+set ignorecase	" Always case-insensitive
 set incsearch	" Searches for strings incrementally
 
 set autoindent	" Auto-indent new lines
@@ -88,22 +95,18 @@ set ruler	" Show row and column ruler information
 set undolevels=1000	" Number of undo levels
 set backspace=indent,eol,start	" Backspace behaviour
 let javascript_enable_domhtmlcss=1
-" autocmd InsertEnter * :set number
-" autocmd InsertLeave * :set relativenumber
 
 :let mapleader = ","
 
 " THEME SETTINGS
-" colorscheme atom-dark-256
-"" seoul256
-colorscheme seoul256
-let g:seoul256_background = 233
+" colorscheme seoul256
+" let g:seoul256_background = 233
 
-" colorscheme mustang
+colorscheme mustang
 " colorscheme monokai
+" colorscheme skittles_berry
 
 " NERDTREE
-autocmd vimenter * NERDTree
 map <C-t> :NERDTreeToggle<CR>
 map <F7> :tabp<CR>
 map <F8> :tabn<CR>
@@ -126,6 +129,7 @@ if version >= 700
     set spl=en spell
     set nospell
 endif
+
 " CTRLP
 let g:ctrlp_show_hidden = 1
 
@@ -137,12 +141,8 @@ nnoremap <silent> <leader>s :call argumentrewrap#RewrapArguments()<CR>
 " BUFFERS & WINDOWS
 set hidden
 
-" New buffer
 nmap <leader>n :enew<cr>
-
-" Next buffer
 nmap <leader>l :bnext<CR>
-nmap <leader><C-Tab> :bnext<CR>
 
 " Close the current buffer and move to the previous one
 " This replicates the idea of closing a tab
@@ -169,9 +169,6 @@ let g:mta_filetypes = {
     \ 'jinja' : 1,
     \ 'php' : 1,
     \}
-"" NEOCOMPLETE
-" Use neocomplete.
-let g:deoplete#enable_at_startup = 1
 
 "" HACKS AND FIXES
 autocmd FileType scss set iskeyword+=-
@@ -179,3 +176,34 @@ autocmd FileType scss set iskeyword+=-
 " VIM CSS
 let g:cssColorVimDoNotMessMyUpdatetime = 1
 
+" AutoCompletion
+" nnoremap <leader><leader> 
+let g:UltiSnipsExpandTrigger="<leader>,"
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+
+" Remapping Defaults
+" Unmap the arrow keys
+no <down> ddp
+no <left> <Nop>
+no <right> <Nop>
+no <up> ddkP
+ino <down> <Nop>
+ino <left> <Nop>
+ino <right> <Nop>
+ino <up> <Nop>
+vno <down> <Nop>
+vno <left> <Nop>
+vno <right> <Nop>
+vno <up> <Nop>
+
+" Removes columns and numbers; allows for easy copy and pasting
+nnoremap <leader>CM :set nonu nolist foldcolumn=0<CR>
+nnoremap <leader>MC :set nu list foldcolumn=1<CR>
+
+" minibufexplorer
+let g:miniBufExplMapCTabSwitchBufs = 1
+
+" Navigation
+nnoremap <C-j> 10j<cr>
+nnoremap <C-k> 10k<cr>

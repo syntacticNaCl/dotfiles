@@ -117,3 +117,10 @@ grepf() {
 grepfc() {
     grep -rnw $1 -e "$2" | wc -l
 }
+
+# print out tmux colour palette
+tmux_colors() {
+    for i in {0..255} ; do
+	printf "\x1b[38;5;${i}mcolour${i}\n"
+    done 
+}

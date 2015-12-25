@@ -2,18 +2,20 @@
 # Git aliases
 # -------------------------------------------------------------------
 
-alias ga='git add -A'
+alias ga='git add'
+alias gaa='git add -A'
 alias gpush='git push'
 alias gpushom='git push origin master'
 alias gl='git log'
 alias gs='git status'
 alias gd='git diff'
+alias gdrb='git push origin --delete'
 alias gm='git commit -m'
 alias gma='git commit -am'
 alias gb='git branch'
 alias gc='git checkout'
 alias gcb='git checkout -b'
-alias gra='git remote add'
+alias gra='git remote add origin'
 alias grr='git remote rm'
 alias gpull='git pull'
 alias gpullom='git pull origin master'

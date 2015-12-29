@@ -32,6 +32,7 @@ binaries=(
     node
     pcre
     python
+    reattach-to-user-namespace
     subversion
     tmux
     wget

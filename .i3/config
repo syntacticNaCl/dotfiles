@@ -93,7 +93,9 @@ set $tag2 "2: code"
 set $tag3 "3: term"
 set $tag4 "4: irc"
 set $tag5 "5: file"
-set $tag6 "6: music"
+set $tag6 "6: mus"
+set $tag7 "7: mon"
+set $tag8 "8: mov"
 
 
 # # switch to workspace
@@ -103,8 +105,8 @@ bindsym $mod+3 workspace $tag3
 bindsym $mod+4 workspace $tag4
 bindsym $mod+5 workspace $tag5
 bindsym $mod+6 workspace $tag6
-bindsym $mod+7 workspace 7
-bindsym $mod+8 workspace 8
+bindsym $mod+7 workspace $tag7
+bindsym $mod+8 workspace $tag8
 bindsym $mod+9 workspace 9
 bindsym $mod+0 workspace 10
 
@@ -115,8 +117,8 @@ bindsym $mod+Shift+3 move container to workspace $tag3
 bindsym $mod+Shift+4 move container to workspace $tag4
 bindsym $mod+Shift+5 move container to workspace $tag5
 bindsym $mod+Shift+6 move container to workspace $tag6
-bindsym $mod+Shift+7 move container to workspace 7
-bindsym $mod+Shift+8 move container to workspace 8
+bindsym $mod+Shift+7 move container to workspace $tag7 
+bindsym $mod+Shift+8 move container to workspace $tag8
 bindsym $mod+Shift+9 move container to workspace 9
 bindsym $mod+Shift+0 move container to workspace 10
 
@@ -158,13 +160,13 @@ bindsym $mod+r mode "resize"
 bar {
     colors {
         # Whole color settings
-        background #000000
+        background #222222
         statusline #ffffff
         separator  #666666
 
         # Type             border  background font
-        focused_workspace  #333333 #20eb04 #000000
-        active_workspace   #333333 #5f676a #ffffff
+        focused_workspace  #333333 #00ff00 #000000
+        active_workspace   #333333 #00ff00 #000000
         inactive_workspace #333333 #222222 #888888
         urgent_workspace   #333333 #990000 #ffffff
     }
@@ -185,6 +187,10 @@ client.urgent        #E41B17 #C60000 #FFFFFF
 exec --no-startup-id feh --bg-fill ~/Pictures/jediorder.jpg
 exec --no-startup-id dropbox start
 exec --no-startup-id nm-applet
+
+# apps
+exec --no-startup-id i3-msg 'workspace 1: www; exec /usr/bin/dwb'
+exec --no-startup-id i3-msg 'workspace 4: irc; exec /usr/bin/weechat-curses'
 
 ## Custom Shortkeys
 #bindsym Control+mod1+l exec i3lock -i ~/Pictures/lock.png

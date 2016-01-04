@@ -124,3 +124,8 @@ tmux_colors() {
 	printf "\x1b[38;5;${i}mcolour${i}\n"
     done 
 }
+
+## Git
+gbnuke() {
+   git branch -D $1; git push origin :$1; 
+}

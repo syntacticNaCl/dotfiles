@@ -26,21 +26,7 @@ alias gstash='git stash'
 alias grefresh='git stash; git pull origin master'
 alias greset='git fetch --all; git reset --hard origin/master'
 
-# -------------------------------------------------------------------
-# SVN aliases
-# -------------------------------------------------------------------
-
-alias svnc='sudo svn commit -m'
-alias svna='sudo svn add'
-alias svnu='sudo svn update'
-alias svnforce='sudo svn update --force'
-alias svns='sudo svn status'
-alias rmsvn="find . -type d -name .svn -exec rm -rf {} \;"
-alias svnln='svn st | grep -e "^?"'
-alias svnadd='svn add `svnln | cut -d " " -f 8`'
-alias svnm="svn stat|grep '^M'"
-alias sugarsvn='sudo svn add custom modules --force'
-alias svnun='sudo svn status | grep ^?'
+# more in functions.zsh
 
 # -------------------------------------------------------------------
 # Cordova aliases
@@ -73,7 +59,8 @@ alias sabp="sencha app build production"
 alias ta='tmux attach'
 alias tls='tmux ls'
 alias tat='tmux attach -t'
-alias tns='tmux new-session -s'
+alias tns='tmux new -s'
+alias tks='tmux kill-session -t'
 
 # -------------------------------------------------------------------
 # Directory aliases
@@ -174,6 +161,7 @@ alias s8init="sudo npm install && bower install"
 # -------------------------------------------------------------------
 
 alias myssh="pbcopy < ~/.ssh/id_rsa.pub"
+:q
 
 # -------------------------------------------------------------------
 # MakeMacBetter aliases
@@ -212,8 +200,6 @@ alias reload="exec $SHELL -l"
 alias setJdk6='export JAVA_HOME=$(/usr/libexec/java_home -v 1.6)'
 alias setJdk7='export JAVA_HOME=$(/usr/libexec/java_home -v 1.7)'
 alias setJdk8='export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)'
-
-alias vi="vim"
 
 # Update zshrc changes
 alias rzsh='source ~/.zshrc'

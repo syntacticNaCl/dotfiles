@@ -5,3 +5,5 @@
 .zsh-update
 .vim/.netrwhist
 .vim/plugged
+scripts/.*.sh
+scripts/vpn*

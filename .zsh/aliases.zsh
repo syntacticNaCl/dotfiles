@@ -233,3 +233,11 @@ alias weather= 'telnet rainmaker.wunderground.com'
 alias chess= 'telnet freechess.org'
 alias nyancat= 'telnet miku.acm.uiuc.edu'
 alias fatcats= 'telnet fatcatsbbs.com'
+
+# -------------------------------------------------------------------
+# Livestreamer 
+# -------------------------------------------------------------------
+alias twit='livestreamer http://www.ustream.tv/leolaporte best'
+alias nasa='livestreamer http://www.ustream.tv/nasahdtv best'
+alias nasaearth='livestreamer http://www.ustream.tv/channel/iss-hdev-payload best'
+alias iss='livestreamer http://www.ustream.tv/channel/live-iss-stream best'

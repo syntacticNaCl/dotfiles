@@ -12,7 +12,7 @@ export PATH="/usr/local/mysql/bin:$PATH"
 # # ANT
 export PATH="/usr/share/ant/bin/ant:$PATH"
 
-if [[ "$OSTYPE" == "linux"* ]]; then
+if [[ '$(uname)' == 'Linux' ]]; then
 ## Ruby
 export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"

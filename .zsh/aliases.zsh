@@ -84,6 +84,7 @@ alias df='df -h'            # Disk free, in gigabytes, not bytes
 alias du='du -h -c'         # Calculate total disk usage for a folder
 alias cls='clear;echo "Currently logged in on $(tty), as $(whoami) in directory $(pwd)."'
 alias cl='clear'
+alias C='clear'
 alias tt='tt++ $HOME/.ttconf'
 
 #convert vi to vim; LAAAZZZYYY
@@ -216,6 +217,7 @@ alias vi="vim"
 
 # Update zshrc changes
 alias rzsh='source ~/.zshrc'
+alias R='source ~/.zshrc'
 
 # Clear that download log
 alias cleardl="sqlite3 ~/Library/Preferences/com.apple.LaunchServices.QuarantineEventsV* 'delete from LSQuarantineEvent'"

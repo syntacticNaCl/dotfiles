@@ -27,22 +27,6 @@ alias grefresh='git stash; git pull origin master'
 alias greset='git fetch --all; git reset --hard origin/master'
 
 # -------------------------------------------------------------------
-# SVN aliases
-# -------------------------------------------------------------------
-
-alias svnc='sudo svn commit -m'
-alias svna='sudo svn add'
-alias svnu='sudo svn update'
-alias svnforce='sudo svn update --force'
-alias svns='sudo svn status'
-alias rmsvn="find . -type d -name .svn -exec rm -rf {} \;"
-alias svnln='svn st | grep -e "^?"'
-alias svnadd='svn add `svnln | cut -d " " -f 8`'
-alias svnm="svn stat|grep '^M'"
-alias sugarsvn='sudo svn add custom modules --force'
-alias svnun='sudo svn status | grep ^?'
-
-# -------------------------------------------------------------------
 # Cordova aliases
 # -------------------------------------------------------------------
 
@@ -74,6 +58,12 @@ alias ta='tmux attach'
 alias tls='tmux ls'
 alias tat='tmux attach -t'
 alias tns='tmux new-session -s'
+
+# -------------------------------------------------------------------
+# Zsh aliases
+# -------------------------------------------------------------------
+alias rzsh='source ~/.zshrc'
+alias R='source ~/.zshrc'
 
 # -------------------------------------------------------------------
 # Directory aliases
@@ -213,12 +203,6 @@ alias setJdk6='export JAVA_HOME=$(/usr/libexec/java_home -v 1.6)'
 alias setJdk7='export JAVA_HOME=$(/usr/libexec/java_home -v 1.7)'
 alias setJdk8='export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)'
 
-alias vi="vim"
-
-# Update zshrc changes
-alias rzsh='source ~/.zshrc'
-alias R='source ~/.zshrc'
-
 # Clear that download log
 alias cleardl="sqlite3 ~/Library/Preferences/com.apple.LaunchServices.QuarantineEventsV* 'delete from LSQuarantineEvent'"
 
@@ -233,6 +217,17 @@ alias weather= 'telnet rainmaker.wunderground.com'
 alias chess= 'telnet freechess.org'
 alias nyancat= 'telnet miku.acm.uiuc.edu'
 alias fatcats= 'telnet fatcatsbbs.com'
+
+# -------------------------------------------------------------------
+# Theming
+# -------------------------------------------------------------------
+alias eZ='vim ~/dotfiles/.zsh'
+alias eT='vim ~/dotfiles/.tmux.conf'
+alias eI='vim ~/dotfiles/.i3/config'
+alias eV='vim ~/dotfiles/.nvim/.nvimrc'
+alias cdD='vim ~/dotfiles'
+alias cdV='vim ~/dotfiles/.nvim'
+alias cdI='vim ~/dotfiles/.i3'
 
 # -------------------------------------------------------------------
 # Livestreamer 

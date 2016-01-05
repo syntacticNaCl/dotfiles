@@ -162,7 +162,6 @@ alias s8init="sudo npm install && bower install"
 # -------------------------------------------------------------------
 
 alias myssh="pbcopy < ~/.ssh/id_rsa.pub"
-:q
 
 # -------------------------------------------------------------------
 # MakeMacBetter aliases

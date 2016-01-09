@@ -30,6 +30,16 @@ alias greset='git fetch --all; git reset --hard origin/master'
 # more in functions.zsh
 
 # -------------------------------------------------------------------
+# Mercurial aliases
+# -------------------------------------------------------------------
+
+alias hga='hg add'
+alias hgc='hg commit'
+alias hgp='hg push'
+alias hgs='hg status'
+alias hgbc='hg branch -C' # clean reset
+
+# -------------------------------------------------------------------
 # Cordova aliases
 # -------------------------------------------------------------------
 
@@ -64,6 +74,14 @@ alias tns='tmux new -s'
 alias tks='tmux kill-session -t'
 
 # -------------------------------------------------------------------
+# VIM
+# -------------------------------------------------------------------
+alias vi="nvim"
+alias vim="nvim"
+alias svi="sudo nvim" # Run nvim as super user
+alias svim="sudo nvim" # Run nvim as super user
+
+# -------------------------------------------------------------------
 # Directory aliases
 # -------------------------------------------------------------------
 
@@ -74,12 +92,6 @@ alias cls='clear;echo "Currently logged in on $(tty), as $(whoami) in directory 
 alias cl='clear'
 alias C='clear'
 alias tt='tt++ $HOME/.ttconf'
-
-#convert vi to vim; LAAAZZZYYY
-alias vi="nvim"
-alias vim="nvim"
-alias svi="sudo nvim" # Run nvim as super user
-alias svim="sudo nvim" # Run nvim as super user
 
 #Directory traversing
 alias ..='cd ..'

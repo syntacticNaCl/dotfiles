@@ -13,6 +13,8 @@ call plug#begin('~/.config/nvim/plugged')
 		Plug 'majutsushi/tagbar'
 	endif
     Plug 'mattn/webapi-vim'
+	Plug 'christoomey/vim-tmux-navigator'
+	Plug 'benmills/vimux'
 " }
 
 " Autocompletion {
@@ -225,6 +227,8 @@ call plug#end()
 		let g:syntastic_auto_loc_list = 1
 		let g:syntastic_check_on_open = 1
 		let g:syntastic_check_on_wq = 0
+		let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes': [],'passive_filetypes': [] }
+		nnoremap <C-w>e :SyntasticCheck<CR> :SyntasticToggleMode<CR>
 
 		if version >= 700
 			set spl=en spell
@@ -320,6 +324,9 @@ call plug#end()
 		autocmd BufNewFile,BufRead *.scss             set ft=scss.css
 		autocmd FileType scss set iskeyword+=-
 
+		" PHP and Html together
+		au BufRead,BufNewFile *.php set ft=php.html
+
 		let g:ycm_semantic_triggers =  {
 			  \   'c' : ['->', '.'],
 			  \   'objc' : ['->', '.', 're!\[[_a-zA-Z]+\w*\s', 're!^\s*[^\W\d]\w*\s',
@@ -391,6 +398,10 @@ call plug#end()
 	" MiniBufExplorer
 	let g:miniBufExplMapCTabSwitchBufs = 1
 
+	" Vimux {
+		nmap <leader>G :call VimuxRunCommand("grunt")<CR>
+	" }
+
 " }
 
 
@@ -412,10 +423,6 @@ call plug#end()
 
     " Previous buffer
     nmap <leader>h :bprevious<CR>
-
-	" Navigation
-	nnoremap <C-j> 10j<cr>
-	nnoremap <C-k> 10k<cr>
 
     " split window
     nnoremap <leader>w <C-w>v<C-w>l 
@@ -445,4 +452,7 @@ call plug#end()
 
 	" Quick disable highlight
 	nnoremap <leader><space> :noh<cr>
+
+	" Escape slashes in url; used for vagrant
+	nmap <leader>r/ :s/\//\\\/<CR>
 " }

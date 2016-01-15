@@ -9,6 +9,7 @@ alias gpushom='git push origin master'
 alias gl='git log'
 alias gs='git status'
 alias gd='git diff'
+alias gdf='git diff --name-status'
 alias gdrb='git push origin --delete'
 alias gm='git commit -m'
 alias gma='git commit -am'
@@ -25,6 +26,18 @@ alias gf='git reflog'
 alias gstash='git stash'
 alias grefresh='git stash; git pull origin master'
 alias greset='git fetch --all; git reset --hard origin/master'
+
+# more in functions.zsh
+
+# -------------------------------------------------------------------
+# Mercurial aliases
+# -------------------------------------------------------------------
+
+alias hga='hg add'
+alias hgc='hg commit'
+alias hgp='hg push'
+alias hgs='hg status'
+alias hgbc='hg branch -C' # clean reset
 
 # -------------------------------------------------------------------
 # Cordova aliases
@@ -57,7 +70,16 @@ alias sabp="sencha app build production"
 alias ta='tmux attach'
 alias tls='tmux ls'
 alias tat='tmux attach -t'
-alias tns='tmux new-session -s'
+alias tns='tmux new -s'
+alias tks='tmux kill-session -t'
+
+# -------------------------------------------------------------------
+# VIM
+# -------------------------------------------------------------------
+alias vi="nvim"
+alias vim="nvim"
+alias svi="sudo nvim" # Run nvim as super user
+alias svim="sudo nvim" # Run nvim as super user
 
 # -------------------------------------------------------------------
 # Zsh aliases
@@ -76,12 +98,6 @@ alias cls='clear;echo "Currently logged in on $(tty), as $(whoami) in directory 
 alias cl='clear'
 alias C='clear'
 alias tt='tt++ $HOME/.ttconf'
-
-#convert vi to vim; LAAAZZZYYY
-alias vi="nvim"
-alias vim="nvim"
-alias svi="sudo nvim" # Run nvim as super user
-alias svim="sudo nvim" # Run nvim as super user
 
 #Directory traversing
 alias ..='cd ..'
@@ -202,6 +218,10 @@ alias reload="exec $SHELL -l"
 alias setJdk6='export JAVA_HOME=$(/usr/libexec/java_home -v 1.6)'
 alias setJdk7='export JAVA_HOME=$(/usr/libexec/java_home -v 1.7)'
 alias setJdk8='export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)'
+
+# Update zshrc changes
+alias rzsh='source ~/.zshrc'
+alias R='source ~/.zshrc'
 
 # Clear that download log
 alias cleardl="sqlite3 ~/Library/Preferences/com.apple.LaunchServices.QuarantineEventsV* 'delete from LSQuarantineEvent'"

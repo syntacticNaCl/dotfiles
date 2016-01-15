@@ -142,17 +142,12 @@ down4me() { curl -s "http://www.downforeveryoneorjustme.com/$1" | sed '/just you
 TV-m() { livestreamer -p mplayer "$1" best ;}
 TV-v() { livestreamer -p vlc "$1" best ;}
 
-
 # Twitch
-
-TwitchMarbs() { livestreamer -p mplayer http://www.twitch.tv/Marbozir best; }
-TwitchBeagle() { livestreamer -p mplayer http://www.twitch.tv/miss_jamball best; }
 TwitchQuill() { livestreamer -p mplayer http://www.twitch.tv/quill18 best; }
-TwitchElysium() { livestreamer -p mplayer http://www.twitch.tv/enterelysium best; }
-TwitchGoth() { livestreamer -p mplayer www.twitch.tv/kinggothalion best; }
+TwitchGeek() { livestreamer -p mplayer www.twitch.tv/geekandsundry best; }
+TwitchHandmade() { livestreamer -p mplayer www.twitch.tv/handmade_hero best; }
 
 # Shows
-
 stream-sp(){ livestreamer -p mplayer veetle.com/index.php/channel/view/541c316fe8423/d6fb77db53674e6395c04d2c16bb0951 best; }
 stream-simp(){ livestreamer -p mplayer veetle.com/index.php/channel/view/52dada61bdf13/34cb225e471c64e9b611cc39fa1a45b1 best; }
 stream-bbt(){ livestreamer -p mplayer veetle.com/index.php/channel/view/566daedcda31c/81c7d011f9dc5c17b3cfe947be8a2f06 best; }
@@ -165,3 +160,8 @@ stream-nasa(){ livestreamer -p mplayer www.ustream.tv/nasahdtv best; }
 stream-nasaearth(){ livestreamer -p mplayer www.ustream.tv/channel/iss-hdev-payload best; }
 stream-iss(){ livestreamer http://www.ustream.tv/channel/live-iss-stream best; }
 stream-jupiter() { livestreamer -p mplayer http://www.ustream.tv/channel/jupiterbroadcasting 720p+_alt_akamai ;}
+
+## Git
+gbnuke() {
+   git branch -D $1; git push origin :$1; 
+}

@@ -139,27 +139,34 @@ down4me() { curl -s "http://www.downforeveryoneorjustme.com/$1" | sed '/just you
 ######################## LIVE STREAMS ######################## 
 ##############################################################
 
+# Because Mac is weird with livestreamer
+if [[ $OSTYPE == 'darwin'* ]]; then
+	PLAYER=''
+else
+	PLAYER='-p mplayer'
+fi
+
 TV-m() { livestreamer -p mplayer "$1" best ;}
 TV-v() { livestreamer -p vlc "$1" best ;}
 
 # Twitch
-TwitchQuill() { livestreamer -p mplayer http://www.twitch.tv/quill18 best; }
-TwitchGeek() { livestreamer -p mplayer www.twitch.tv/geekandsundry best; }
-TwitchHandmade() { livestreamer -p mplayer www.twitch.tv/handmade_hero best; }
+TwitchQuill() { livestreamer $PLAYER http://www.twitch.tv/quill18 best; }
+TwitchGeek() { livestreamer $PLAYER www.twitch.tv/geekandsundry best; }
+TwitchHandmade() { livestreamer $PLAYER www.twitch.tv/handmade_hero best; }
 
 # Shows
-stream-sp(){ livestreamer -p mplayer veetle.com/index.php/channel/view/541c316fe8423/d6fb77db53674e6395c04d2c16bb0951 best; }
-stream-simp(){ livestreamer -p mplayer veetle.com/index.php/channel/view/52dada61bdf13/34cb225e471c64e9b611cc39fa1a45b1 best; }
-stream-bbt(){ livestreamer -p mplayer veetle.com/index.php/channel/view/566daedcda31c/81c7d011f9dc5c17b3cfe947be8a2f06 best; }
-stream-dw(){ livestreamer -p mplayer veetle.com/index.php/channel/view/4c8416bb6a612/6115b84a8270b63c699ecea0b7eb5150 best; }
-stream-qi(){ livestreamer -p mplayer vaughnlive.tv/qinteresting best; }
-stream-twit(){ livestreamer -p mplayer www.ustream.tv/leolaporte best; }
+stream-sp(){ livestreamer $PLAYER veetle.com/index.php/channel/view/541c316fe8423/d6fb77db53674e6395c04d2c16bb0951 best; }
+stream-simp(){ livestreamer $PLAYER veetle.com/index.php/channel/view/52dada61bdf13/34cb225e471c64e9b611cc39fa1a45b1 best; }
+stream-bbt(){ livestreamer $PLAYER veetle.com/index.php/channel/view/566daedcda31c/81c7d011f9dc5c17b3cfe947be8a2f06 best; }
+stream-dw(){ livestreamer $PLAYER veetle.com/index.php/channel/view/4c8416bb6a612/6115b84a8270b63c699ecea0b7eb5150 best; }
+stream-qi(){ livestreamer $PLAYER vaughnlive.tv/qinteresting best; }
+stream-twit(){ livestreamer $PLAYER www.ustream.tv/leolaporte best; }
 
 # Space
-stream-nasa(){ livestreamer -p mplayer www.ustream.tv/nasahdtv best; }
-stream-nasaearth(){ livestreamer -p mplayer www.ustream.tv/channel/iss-hdev-payload best; }
+stream-nasa(){ livestreamer $PLAYER www.ustream.tv/nasahdtv best; }
+stream-nasaearth(){ livestreamer $PLAYER www.ustream.tv/channel/iss-hdev-payload best; }
 stream-iss(){ livestreamer http://www.ustream.tv/channel/live-iss-stream best; }
-stream-jupiter() { livestreamer -p mplayer http://www.ustream.tv/channel/jupiterbroadcasting 720p+_alt_akamai ;}
+stream-jupiter() { livestreamer $PLAYER http://www.ustream.tv/channel/jupiterbroadcasting 720p+_alt_akamai ;}
 
 ## Git
 gbnuke() {

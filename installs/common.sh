@@ -32,8 +32,8 @@ for file in $files; do
     ln -s $dir/.$file ~/.$file
 done
 
-# NVIM 
-ln $dir/.nvim ~/.config/nvim
+# NVIM
+ln -s $dir/.nvim ~/.config/nvim
 
 # Clone Powerline fonts repo
 echo "Cloning 'powerline-fonts' repository..."

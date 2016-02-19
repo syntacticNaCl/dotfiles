@@ -226,6 +226,9 @@ alias R='source ~/.zshrc'
 # Clear that download log
 alias cleardl="sqlite3 ~/Library/Preferences/com.apple.LaunchServices.QuarantineEventsV* 'delete from LSQuarantineEvent'"
 
+# Fix pianobar issue; shushes errors until this bit is resolved
+alias pianobar="pianobar 2>/dev/null"
+
 # -------------------------------------------------------------------
 # Fun stuff
 # -------------------------------------------------------------------

@@ -53,7 +53,7 @@ call plug#begin('~/.config/nvim/plugged')
     Plug 'Xuyuanp/nerdtree-git-plugin'
     Plug 'godlygeek/tabular'
     Plug 'Lokaltog/vim-easymotion'
-    Plug 'fholgado/minibufexpl.vim'
+    " Plug 'fholgado/minibufexpl.vim'
     Plug 'rking/ag.vim'
 " }
 
@@ -111,6 +111,7 @@ call plug#begin('~/.config/nvim/plugged')
     Plug 'shawncplus/skittles_berry'
     Plug 'bling/vim-airline'
 	Plug 'powerline/fonts', { 'do': './install.sh' }
+	Plug 'flazz/vim-colorschemes'
 
 call plug#end()
 
@@ -146,6 +147,10 @@ call plug#end()
 	set shortmess+=filmnrxoOtT          " Abbrev. of messages (avoids 'hit enter')
     set viewoptions=folds,options,cursor,unix,slash " Better Unix / Windows compatibility
     set virtualedit=onemore             " Allow for cursor beyond last character
+	set foldmethod=indent   
+	set foldnestmax=10
+	set nofoldenable " do not fold file by default
+	set foldlevel=2
 
 	" Use tab to cycle through brackets/parens
 	nnoremap <tab> % 
@@ -194,7 +199,8 @@ call plug#end()
 " }
 
 " Theming {
-	colorscheme seoul256
+	" colorscheme seoul256
+	colorscheme Tomorrow-Night
 	" let g:seoul256_background = 233
 
 	" colorscheme mustang
@@ -401,6 +407,15 @@ call plug#end()
 	" Vimux {
 		nmap <leader>G :call VimuxRunCommand("grunt")<CR>
 	" }
+	
+	" EasyMotion {
+		" Turn on case insensitive feature
+		let g:EasyMotion_smartcase = 1
+
+		" JK motions: Line motions
+		map <Leader>j <Plug>(easymotion-j)
+		map <Leader>k <Plug>(easymotion-k)
+	" }
 
 " }
 
@@ -408,7 +423,7 @@ call plug#end()
 
 " KEYBINDINGS {
 
-	" Buffers
+	"" Buffers
     set hidden
     nmap <leader>n :enew<cr>
     nmap <leader>l :bnext<CR>
@@ -424,6 +439,14 @@ call plug#end()
     " Previous buffer
     nmap <leader>h :bprevious<CR>
 
+	"" Tabs
+	" New tab
+	nmap <leader>t :tabnew<CR>
+    nmap <leader>L :tabnext<CR>
+    nmap <leader>H :tabprev<CR>
+
+	" Tab next
+
     " split window
     nnoremap <leader>w <C-w>v<C-w>l 
 
@@ -431,7 +454,7 @@ call plug#end()
 	nnoremap <leader>W :%s/\s\+$//<cr>:let @/=''<CR>
 
 	" search with Ack
-	nnoremap <leader>a :Ack
+	nnoremap <leader>a :Ag
 
 	" fold tag
 	nnoremap <leader>ft Vatzf

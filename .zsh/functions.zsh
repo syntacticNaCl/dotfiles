@@ -157,7 +157,7 @@ TwitchHandmade() { livestreamer $PLAYER www.twitch.tv/handmade_hero best; }
 # Shows
 stream-sp(){ livestreamer $PLAYER veetle.com/index.php/channel/view/541c316fe8423/d6fb77db53674e6395c04d2c16bb0951 best; }
 stream-simp(){ livestreamer $PLAYER veetle.com/index.php/channel/view/52dada61bdf13/34cb225e471c64e9b611cc39fa1a45b1 best; }
-stream-bbt(){ livestreamer $PLAYER veetle.com/index.php/channel/view/566daedcda31c/81c7d011f9dc5c17b3cfe947be8a2f06 best; }
+stream-bbt(){ livestreamer $PLAYER vaughnlive.tv/highspothorror101 best; }
 stream-dw(){ livestreamer $PLAYER veetle.com/index.php/channel/view/4c8416bb6a612/6115b84a8270b63c699ecea0b7eb5150 best; }
 stream-qi(){ livestreamer $PLAYER vaughnlive.tv/qinteresting best; }
 stream-twit(){ livestreamer $PLAYER www.ustream.tv/leolaporte best; }

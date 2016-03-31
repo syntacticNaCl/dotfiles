@@ -168,6 +168,9 @@ stream-nasaearth(){ livestreamer $PLAYER www.ustream.tv/channel/iss-hdev-payload
 stream-iss(){ livestreamer http://www.ustream.tv/channel/live-iss-stream best; }
 stream-jupiter() { livestreamer $PLAYER http://www.ustream.tv/channel/jupiterbroadcasting 720p+_alt_akamai ;}
 
+# Figlet
+pandora-cli() { clear && figlet -c Pandora CLI && pianobar ;}
+
 ## Git
 gbnuke() {
    git branch -D $1; git push origin :$1; 

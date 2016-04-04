@@ -19,11 +19,14 @@
   "E" 'eval-buffer
   "b" 'switch-to-buffer
   "k" 'kill-buffer
-  "w" 'save-buffer
+  "s" 'save-buffer
   "P" 'package-install
   "DD" 'delete-file
   "d" 'delete-window
-  ; "ci" 'evilnc-comment-or-uncomment-lines
+  "|" 'split-window-right
+  "-" 'split-window-below
+  "x" 'delete-window
+  "ci" 'evilnc-comment-or-uncomment-lines
   ; "cl" 'evilnc-quick-comment-or-uncomment-to-the-line
   ; "ll" 'evilnc-quick-comment-or-uncomment-to-the-line
   ; "cc" 'evilnc-copy-and-comment-lines
@@ -37,8 +40,8 @@
 (global-evil-surround-mode 1)
 
 (require 'evil-smartparens)
-(add-hook 'smartparens-enabled-hook 'web-mode)
-(add-hook 'smartparens-enabled-hook 'php-mode)
+(add-hook 'web-enabled-hook 'evil-smartparens-mode)
+(add-hook 'php-enabled-hook 'evil-smartparens-mode)
 
 (require 'evil-matchit)
 (global-evil-matchit-mode 1)
@@ -66,6 +69,7 @@
 (require 'flymake) 
 (global-set-key [f3] 'flymake-display-err-menu-for-current-line)
 (global-set-key [f4] 'flymake-goto-next-error)
+
 ;; }}
 
 ;; webmode {{
@@ -78,9 +82,6 @@
 (add-to-list 'auto-mode-alist '("\\.mustache\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.djhtml\\'" . web-mode))
 
-(require 'php-mode)
-(eval-after-load 'php-mode
-  '(require 'php-ext))
 ;; }}
 
 ;; autocompletion {{
@@ -89,14 +90,101 @@
 
 ;; emmet-mode {{
 (require 'emmet-mode)
-(add-hook 'sgml-mode-hook 'emmet-mode) ;; Auto-start on any markup modes
-(add-hook 'css-mode-hook  'emmet-mode) ;; enable Emmet's css abbreviation.
+(add-hook 'sgml-mode-hook 'emmet-mode) ;; Auto-start on any markup modes (add-hook 'css-mode-hook  'emmet-mode) ;; enable Emmet's css abbreviation.
+(add-hook 'web-mode-hook  'emmet-mode) ;; enable Emmet's web abbreviation.
 (setq emmet-move-cursor-between-quotes t) ;; default nil
+
+(require 'ac-emmet)
+(add-hook 'sgml-mode-hook 'ac-emmet-html-setup)
+(add-hook 'css-mode-hook 'ac-emmet-css-setup)
 ;;}}
 
 ;; ac-html {{
-(add-to-list 'web-mode-ac-sources-alist
-             '("html" . (ac-source-html-tag
-                         ac-source-html-attr
-                         ac-source-html-attrv)))
+(require 'ac-html)
+(defun setup-ac-for-html ()
+  ;; Require ac-haml since we are setup haml auto completion
+  (require 'ac-html)
+  ;; Require default data provider if you want to use
+  (require 'ac-html-default-data-provider)
+  ;; Enable data providers,
+  ;; currently only default data provider available
+  (ac-html-enable-data-provider 'ac-html-default-data-provider)
+  ;; Let ac-haml do some setup
+  (ac-html-setup)
+  ;; Set your ac-source
+  (setq ac-sources '(ac-source-html-tag
+                     ac-source-html-attr
+                     ac-source-html-attrv))
+  ;; Enable auto complete mode
+  (auto-complete-mode))
+
+(add-hook 'html-mode-hook 'setup-ac-for-html)
 ;;}}
+
+;; smex {{
+(require 'smex)
+(global-set-key (kbd "M-x") 'smex)
+(global-set-key (kbd "M-X") 'smex-major-mode-commands)
+;; This is your old M-x.
+(global-set-key (kbd "C-c C-c M-x") 'execute-extended-command)
+;; }}
+
+;; expand-region {{
+(require 'expand-region)
+(global-set-key (kbd "C-=") 'er/expand-region)
+;; }} 
+;; volitle-highlights {{
+(require 'volatile-highlights)
+(volatile-highlights-mode t)
+;; }} 
+
+;; markdown-mode {{
+(require 'markdown-mode)
+(autoload 'markdown-mode "markdown-mode"
+   "Major mode for editing Markdown files" t)
+(add-to-list 'auto-mode-alist '("\\.text\\'" . markdown-mode))
+(add-to-list 'auto-mode-alist '("\\.markdown\\'" . markdown-mode))
+(add-to-list 'auto-mode-alist '("\\.md\\'" . markdown-mode))
+;; }}
+
+
+;; projectile {{
+(require 'projectile)
+(projectile-global-mode)
+;; }}
+
+
+;; php {{
+(require 'php-auto-yasnippets)
+(setq php-auto-yasnippet-php-program "~/.emacs.d/snippets/php/Create-PHP-YASnippet.php")
+(define-key php-mode-map (kbd "C-c C-y") 'yas/create-php-snippet)
+
+;; ac-php
+(add-hook 'php-mode-hook
+        '(lambda ()
+            (auto-complete-mode t)
+            (require 'ac-php)
+            (setq ac-sources  '(ac-source-php ) )
+            (yas-global-mode 1)
+            (define-key php-mode-map  (kbd "C-]") 'ac-php-find-symbol-at-point)   ;goto define
+            (define-key php-mode-map  (kbd "C-t") 'ac-php-location-stack-back   ) ;go back
+            ))
+
+(require 'php-eldoc)
+
+(require 'php-refactor-mode)
+(add-hook 'php-mode-hook 'php-refactor-mode)
+
+(require 'flymake-php)
+(add-hook 'php-mode-hook 'flymake-php-load)
+
+(require 'php-mode)
+(eval-after-load 'php-mode
+  '(require 'php-ext))
+;; }}
+
+
+;; git {{
+(require 'git-gutter)
+(global-git-gutter-mode t)
+;; }}

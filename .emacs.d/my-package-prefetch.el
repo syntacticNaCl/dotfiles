@@ -1,24 +1,9 @@
 (defvar prelude-packages
   '(
-	 ; auctex 
-	 ; clojure-mode 
-	 ; coffee-mode 
 	 ; deft 
 	 ; elm 
 	 ; gist 
-	 ; groovy-mode 
-	 ; haml-mode 
-	 ; haskell-mode 
-	 ; inf-ruby
-	 ; projectile 
 	 ; python
-	 ; rainbow-mode 
-	 ; smex 
-	 ; solarized-theme
-	 ; volatile-highlights 
-	 ; yaml-mode 
-	 ; yari 
-	 ac-php
 	 ac-html
 	 ac-emmet
 	 auto-complete 
@@ -34,7 +19,10 @@
 	 evil-nerd-commenter
 	 expand-region
 	 find-file-in-project 
+	 flymake
+	 flymake-php
 	 flymake-jslint 
+	 git-gutter
 	 helm
 	 idle-highlight-mode 
 	 ido-ubiquitous
@@ -43,13 +31,20 @@
 	 markdown-mode 
 	 paredit
 	 php-mode
+	 php-auto-yasnippets
+	 php-completion
+	 php-refactor-mode
+	 php-eldoc
 	 phpunit
+	 projectile 
 	 rainbow-delimiters 
 	 sass-mode 
 	 seti-theme
 	 scss-mode 
+	 smex
 	 undo-tree 
 	 visual-regexp-steroids 
+	 volatile-highlights 
 	 web-mode
 	 yasnippet 
 	 )

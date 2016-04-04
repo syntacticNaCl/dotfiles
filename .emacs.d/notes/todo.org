@@ -1,0 +1,9 @@
+* Wake up
+** TODO Brush teeth
+** TODO Take a shower
+** TODO Get Ready
+* Eat
+* Go to Work
+* Lunch
+* Work more
+* Go Home

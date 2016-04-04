@@ -24,11 +24,13 @@
 	 flymake-jslint 
 	 git-gutter
 	 helm
+	 helm-projectile
 	 idle-highlight-mode 
 	 ido-ubiquitous
 	 key-chord
 	 magit 
 	 markdown-mode 
+         neotree
 	 paredit
 	 php-mode
 	 php-auto-yasnippets

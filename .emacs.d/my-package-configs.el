@@ -4,6 +4,9 @@
 (require 'helm)
 (require 'helm-config)
 (helm-mode 1)
+
+(require 'helm-projectile)
+(helm-projectile-on)
 ;; }} end helm
 
 ;; evil {{
@@ -26,6 +29,8 @@
   "|" 'split-window-right
   "-" 'split-window-below
   "x" 'delete-window
+  "t" 'neotree-toggle
+  "m" 'helm-M-x
   "ci" 'evilnc-comment-or-uncomment-lines
   ; "cl" 'evilnc-quick-comment-or-uncomment-to-the-line
   ; "ll" 'evilnc-quick-comment-or-uncomment-to-the-line
@@ -187,4 +192,10 @@
 ;; git {{
 (require 'git-gutter)
 (global-git-gutter-mode t)
+;; }}
+
+
+;; neotree {{
+(require 'neotree)
+(global-set-key [C-c C-t] 'neotree-toggle)
 ;; }}

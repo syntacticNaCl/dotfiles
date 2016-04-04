@@ -104,6 +104,7 @@ call plug#begin('~/.config/nvim/plugged')
 " }
 
 " Theme Plugins
+	Plug 'trusktr/seti.vim'
     Plug 'junegunn/seoul256.vim'
     Plug 'croaker/mustang-vim'
     Plug 'altercation/vim-colors-solarized'
@@ -200,7 +201,8 @@ call plug#end()
 
 " Theming {
 	" colorscheme seoul256
-	colorscheme Tomorrow-Night
+	" colorscheme Tomorrow-Night
+	colorscheme seti
 	" let g:seoul256_background = 233
 
 	" colorscheme mustang

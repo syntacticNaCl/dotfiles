@@ -259,3 +259,11 @@ alias twit='livestreamer http://www.ustream.tv/leolaporte best'
 alias nasa='livestreamer http://www.ustream.tv/nasahdtv best'
 alias nasaearth='livestreamer http://www.ustream.tv/channel/iss-hdev-payload best'
 alias iss='livestreamer http://www.ustream.tv/channel/live-iss-stream best'
+
+
+# -------------------------------------------------------------------
+# News/Music
+# -------------------------------------------------------------------
+alias news=newsbeuter
+alias pods=podsbeuter
+alias music=ncmpcpp

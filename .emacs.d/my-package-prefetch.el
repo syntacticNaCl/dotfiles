@@ -8,6 +8,7 @@
 	 ac-emmet
 	 auto-complete 
 	 better-defaults
+         color-theme-sanityinc-tomorrow
 	 elisp-slime-nav 
 	 emmet-mode
 	 evil
@@ -49,6 +50,7 @@
 	 volatile-highlights 
 	 web-mode
 	 yasnippet 
+         zenburn-theme
 	 )
   "A list of packages to ensure are installed at launch.")
 

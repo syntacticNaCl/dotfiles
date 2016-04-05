@@ -16,7 +16,8 @@
 (column-number-mode 1)
 
 ;; Load theme
-(load-theme 'seti t)
+;; (load-theme 'seti t)
+(load-theme 'zenburn t)
 (set-cursor-color "green")
 
 ;; Add line nums

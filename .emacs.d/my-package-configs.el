@@ -27,6 +27,7 @@
   "DD" 'delete-file
   "d" 'delete-window
   "|" 'split-window-right
+  "W" 'split-window-right
   "-" 'split-window-below
   "x" 'delete-window
   "t" 'neotree-toggle

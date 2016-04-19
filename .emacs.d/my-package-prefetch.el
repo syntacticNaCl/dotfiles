@@ -6,6 +6,8 @@
 	 ; python
 	 ac-html
 	 ac-emmet
+         angular-mode
+         angular-snippets
 	 auto-complete 
 	 better-defaults
          color-theme-sanityinc-tomorrow

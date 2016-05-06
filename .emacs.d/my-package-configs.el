@@ -199,4 +199,21 @@
 ;; neotree {{
 (require 'neotree)
 (global-set-key [C-c C-t] 'neotree-toggle)
+(add-hook 'neotree-mode-hook
+          (lambda ()
+            (define-key evil-normal-state-local-map (kbd "TAB") 'neotree-enter)
+            (define-key evil-normal-state-local-map (kbd "SPC") 'neotree-enter)
+            (define-key evil-normal-state-local-map (kbd "q") 'neotree-hide)
+            (define-key evil-normal-state-local-map (kbd "RET") 'neotree-enter)))
+; smart open neotree
+(setq neo-smart-open t)
+
+;using with projectile
+; C-c p p
+(setq projectile-switch-project-action 'neotree-projectile-action)
+
 ;; }}
+
+;; json {{
+ (require 'json-mode)
+;;}}

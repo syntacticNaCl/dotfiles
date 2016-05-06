@@ -6,11 +6,11 @@
 	 ; python
 	 ac-html
 	 ac-emmet
-         angular-mode
-         angular-snippets
+	 angular-mode
+	 angular-snippets
 	 auto-complete 
 	 better-defaults
-         color-theme-sanityinc-tomorrow
+	 color-theme-sanityinc-tomorrow
 	 elisp-slime-nav 
 	 emmet-mode
 	 evil
@@ -30,10 +30,11 @@
 	 helm-projectile
 	 idle-highlight-mode 
 	 ido-ubiquitous
+	 json-mode
 	 key-chord
 	 magit 
 	 markdown-mode 
-         neotree
+	 neotree
 	 paredit
 	 php-mode
 	 php-auto-yasnippets

@@ -20,3 +20,6 @@ scripts/vpn*
 .emacs.d/places
 .emacs.d/#*
 .emacs.d/*~
+.emacs.d/projectile-bookmarks.eld
+.emacs.d/places
+.emacs.d/smex-items

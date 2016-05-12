@@ -103,9 +103,9 @@
 ;; }}
 
 ;; autocompletion {{
-(ac-config-default)
-(add-to-list 'ac-modes 'angular-mode)
-(add-to-list 'ac-modes 'angular-html-mode)
+ (ac-config-default)
+ (add-to-list 'ac-modes 'angular-mode)
+ (add-to-list 'ac-modes 'angular-html-mode)
 ;; }}
 
 ;; emmet-mode {{
@@ -231,3 +231,19 @@
 ;; json {{
  (require 'json-mode)
 ;;}}
+
+;; company-mode {{
+(add-hook 'after-init-hook 'global-company-mode)
+(require 'company)                                   ; load company mode
+(require 'company-web-html)                          ; load company mode html backend
+;; }}
+
+;; js2-mode {{
+(add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
+;;}}
+
+;; better modeline {{
+(require 'powerline)
+(powerline-default-theme)
+;; }}
+

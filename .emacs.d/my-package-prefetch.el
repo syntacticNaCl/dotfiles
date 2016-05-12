@@ -9,10 +9,14 @@
 	 ac-html-angular
 	 ac-html
 	 ac-emmet
+	 ac-php
 	 angular-mode
 	 angular-snippets
-	 auto-complete 
 	 better-defaults
+	 company
+	 company-c-headers
+	 company-shell
+	 company-web
 	 color-theme-sanityinc-tomorrow
 	 elisp-slime-nav 
 	 emmet-mode
@@ -46,11 +50,15 @@
 	 php-refactor-mode
 	 php-eldoc
 	 phpunit
+	 powerline
+	 powerline-evil
 	 projectile 
 	 rainbow-delimiters 
 	 sass-mode 
 	 seti-theme
 	 scss-mode 
+	 smart-mode-line
+	 smart-mode-line-powerline-theme
 	 smex
 	 undo-tree 
 	 visual-regexp-steroids 

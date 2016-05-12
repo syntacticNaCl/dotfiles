@@ -26,3 +26,5 @@
 ;; Override from yes-or-no to y-or-n
 (defalias 'yes-or-no-p 'y-or-n-p)
 
+;; Highlight Indentation
+(require 'highlight-indentation)

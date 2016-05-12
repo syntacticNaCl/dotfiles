@@ -27,6 +27,8 @@
   "DD" 'delete-file
   "d" 'delete-window
   "|" 'split-window-right
+  "W" 'split-window-right
+  "+" 'balance-windows
   "-" 'split-window-below
   "x" 'delete-window
   "t" 'neotree-toggle
@@ -89,8 +91,21 @@
 
 ;; }}
 
+;; angular-mode {{
+(require 'angular-mode)
+(require 'angular-snippets)
+(require 'ac-html-angular)
+
+;; }}
+
+;; json-mode {{
+(require 'json-mode)
+;; }}
+
 ;; autocompletion {{
- (ac-config-default)
+(ac-config-default)
+(add-to-list 'ac-modes 'angular-mode)
+(add-to-list 'ac-modes 'angular-html-mode)
 ;; }}
 
 ;; emmet-mode {{
@@ -198,4 +213,10 @@
 ;; neotree {{
 (require 'neotree)
 (global-set-key [C-c C-t] 'neotree-toggle)
+(add-hook 'neotree-mode-hook
+          (lambda ()
+            (define-key evil-normal-state-local-map (kbd "TAB") 'neotree-enter)
+            (define-key evil-normal-state-local-map (kbd "SPC") 'neotree-enter)
+            (define-key evil-normal-state-local-map (kbd "q") 'neotree-hide)
+            (define-key evil-normal-state-local-map (kbd "RET") 'neotree-enter)))
 ;; }}

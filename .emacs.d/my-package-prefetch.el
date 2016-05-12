@@ -4,6 +4,9 @@
 	 ; elm 
 	 ; gist 
 	 ; python
+         angular-mode
+         angular-snippets
+         ac-html-angular
 	 ac-html
 	 ac-emmet
 	 auto-complete 
@@ -24,10 +27,12 @@
 	 flymake-php
 	 flymake-jslint 
 	 git-gutter
+         highlight-indentation
 	 helm
 	 helm-projectile
 	 idle-highlight-mode 
 	 ido-ubiquitous
+         json-mode
 	 key-chord
 	 magit 
 	 markdown-mode 

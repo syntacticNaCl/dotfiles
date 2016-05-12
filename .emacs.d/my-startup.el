@@ -1,4 +1,4 @@
 ;; Startup stuff
-(split-window-horizontally)
+(menu-bar-mode)
 (custom-set-variables
  '(initial-frame-alist (quote ((fullscreen . maximized)))))

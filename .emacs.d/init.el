@@ -14,9 +14,11 @@
 (setq package-prefetch (expand-file-name "my-package-prefetch.el" user-emacs-directory))
 (setq package-configs (expand-file-name "my-package-configs.el" user-emacs-directory))
 (setq keybindings (expand-file-name "my-keybindings.el" user-emacs-directory))
+(setq helpers (expand-file-name "my-helpers.el" user-emacs-directory))
 
 (load package-prefetch)
 (load startup)
 (load editor-config)
 (load package-configs)
 (load keybindings)
+(load helpers)

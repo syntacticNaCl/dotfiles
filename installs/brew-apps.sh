@@ -9,14 +9,13 @@ apps=(
   dropbox
   google-chrome
   slack
-  filezilla
+  forklift
+  emacs
   phpstorm
   firefox
-  spotify
   vagrant
   flash
   iterm2
-  shiori
   sublime-text
   virtualbox
   keepassx
@@ -24,15 +23,10 @@ apps=(
   dash
   vlc
   sequel-pro
-  versions
   skype
-  utorrent
   hyperdock
   hyperswitch
-  skitch
   evernote
-  spectacle
-  teamviewer
   slate
   screenhero
   spectacle

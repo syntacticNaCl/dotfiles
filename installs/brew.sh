@@ -32,9 +32,11 @@ binaries=(
     node
     pcre
     python
+    pianobar
     reattach-to-user-namespace
     subversion
     tmux
+    vim
     wget
     wxmac
     youtube-dl
@@ -51,19 +53,18 @@ brew install caskroom/cask/brew-cask
 
 # Apps
 apps=(
-  airmail
+ airmail
   alfred
   dropbox
   google-chrome
   slack
   forklift
+  emacs
   phpstorm
   firefox
-  spotify
   vagrant
   flash
   iterm2
-  shiori
   sublime-text
   virtualbox
   keepassx
@@ -71,18 +72,14 @@ apps=(
   dash
   vlc
   sequel-pro
-  versions
   skype
-  utorrent
   hyperdock
   hyperswitch
-  skitch
   evernote
-  spectacle
-  teamviewer
   slate
   screenhero
   spectacle
+  libreoffice
 )
 
 # Install apps to /Applications

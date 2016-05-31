@@ -51,45 +51,6 @@ brew cleanup
 #install cask
 brew install caskroom/cask/brew-cask
 
-# Apps
-apps=(
- airmail
-  alfred
-  dropbox
-  google-chrome
-  slack
-  forklift
-  emacs
-  phpstorm
-  firefox
-  vagrant
-  flash
-  iterm2
-  sublime-text
-  virtualbox
-  keepassx
-  atom
-  dash
-  vlc
-  sequel-pro
-  skype
-  hyperdock
-  hyperswitch
-  evernote
-  slate
-  screenhero
-  spectacle
-  libreoffice
-)
-
-# Install apps to /Applications
-# Default is: /Users/$user/Applications
-echo "installing apps..."
-brew cask install --appdir="/Applications" ${apps[@]}
-
-echo "Final cleanup..."
-brew update && brew upgrade brew-cask && brew cleanup && brew cask cleanup
-
-
+sh brew-apps.sh
 
 echo "Welcome to your new dev box!"

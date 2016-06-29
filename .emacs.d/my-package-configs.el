@@ -1,5 +1,3 @@
-; ('require better-defaults)
-
 ;; helm {{
 (require 'helm)
 (require 'helm-config)
@@ -22,6 +20,7 @@
   "E" 'eval-buffer
   "b" 'switch-to-buffer
   "k" 'kill-buffer
+  "K" 'kill-buffer-and-window
   "s" 'save-buffer
   "P" 'package-install
   "DD" 'delete-file
@@ -34,6 +33,8 @@
   "t" 'neotree-toggle
   "m" 'helm-M-x
   "ci" 'evilnc-comment-or-uncomment-lines
+  "f" 'helm-projectile-find-file
+  "pp" 'helm-projectile
   ; "cl" 'evilnc-quick-comment-or-uncomment-to-the-line
   ; "ll" 'evilnc-quick-comment-or-uncomment-to-the-line
   ; "cc" 'evilnc-copy-and-comment-lines
@@ -165,12 +166,6 @@
 (add-to-list 'auto-mode-alist '("\\.text\\'" . markdown-mode))
 (add-to-list 'auto-mode-alist '("\\.markdown\\'" . markdown-mode))
 (add-to-list 'auto-mode-alist '("\\.md\\'" . markdown-mode))
-;; }}
-
-
-;; projectile {{
-(require 'projectile)
-(projectile-global-mode)
 ;; }}
 
 

@@ -10,6 +10,7 @@ scripts/vpn*
 # emacs
 .emacs.d/auto-save-list
 .emacs.d/backups
+.emacs.d/bookmarks
 .emacs.d/elpa
 .emacs.d/eshell
 .emacs.d/plugins

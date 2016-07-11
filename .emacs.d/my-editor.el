@@ -6,6 +6,10 @@
 ;; Prevent backup files
 (setq make-backup-files nil) 
 
+;; Place auto-saves in the system temp directory
+(setq auto-save-file-name-transforms
+          `((".*" ,temporary-file-directory t)))
+
 ;; Black splash screen
 (setq inhibit-splash-screen t)
 
@@ -32,3 +36,4 @@
 ;; TabsAreEvil
 ;; (setq-default indent-tabs-mode nil)
 ;; (setq-default tab-width 4)
+

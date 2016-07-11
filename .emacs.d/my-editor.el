@@ -28,3 +28,7 @@
 
 ;; Highlight Indentation
 (require 'highlight-indentation)
+
+;; TabsAreEvil
+;; (setq-default indent-tabs-mode nil)
+;; (setq-default tab-width 4)

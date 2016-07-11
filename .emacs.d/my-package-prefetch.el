@@ -65,6 +65,7 @@
 	 volatile-highlights 
 	 web-mode
 	 yasnippet 
+	 yaml-mode
 	 zenburn-theme
 	 )
   "A list of packages to ensure are installed at launch.")

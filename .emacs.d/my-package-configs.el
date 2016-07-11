@@ -18,7 +18,8 @@
 (evil-leader/set-key
   "e" 'find-file
   "E" 'eval-buffer
-  "b" 'switch-to-buffer
+  "b" 'helm-buffers-list
+  "B" 'helm-bookmarks
   "k" 'kill-buffer
   "K" 'kill-buffer-and-window
   "s" 'save-buffer
@@ -35,6 +36,7 @@
   "ci" 'evilnc-comment-or-uncomment-lines
   "f" 'helm-projectile-find-file
   "pp" 'helm-projectile
+  "r" 'helm-projectile
   ; "cl" 'evilnc-quick-comment-or-uncomment-to-the-line
   ; "ll" 'evilnc-quick-comment-or-uncomment-to-the-line
   ; "cc" 'evilnc-copy-and-comment-lines
@@ -240,5 +242,10 @@
 ;; better modeline {{
 (require 'powerline)
 (powerline-default-theme)
+;; }}
+
+;; yaml-mode {{
+(require 'yaml-mode)
+    (add-to-list 'auto-mode-alist '("\\.yml\\'" . yaml-mode))
 ;; }}
 

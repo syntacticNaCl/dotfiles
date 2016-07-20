@@ -18,6 +18,7 @@
 	 company-shell
 	 company-web
 	 color-theme-sanityinc-tomorrow
+	 dired+
 	 elisp-slime-nav 
 	 emmet-mode
 	 evil

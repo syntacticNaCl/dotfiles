@@ -7,6 +7,10 @@
 (helm-projectile-on)
 ;; }} end helm
 
+;; dired {{
+(require 'dired+)
+;;}}
+
 ;; evil {{
 (require 'evil)
 (global-evil-leader-mode)
@@ -20,6 +24,7 @@
   "E" 'eval-buffer
   "b" 'helm-buffers-list
   "B" 'helm-bookmarks
+  "l" 'evil-switch-to-windows-last-buffer
   "k" 'kill-buffer
   "K" 'kill-buffer-and-window
   "s" 'save-buffer

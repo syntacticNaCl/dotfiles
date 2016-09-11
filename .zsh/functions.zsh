@@ -167,11 +167,16 @@ stream-nasa(){ livestreamer $PLAYER www.ustream.tv/nasahdtv best; }
 stream-nasaearth(){ livestreamer $PLAYER www.ustream.tv/channel/iss-hdev-payload best; }
 stream-iss(){ livestreamer http://www.ustream.tv/channel/live-iss-stream best; }
 stream-jupiter() { livestreamer $PLAYER http://www.ustream.tv/channel/jupiterbroadcasting 720p+_alt_akamai ;}
-
 # Figlet
+
 pandora-cli() { clear && figlet -c Pandora CLI && pianobar ;}
 
 ## Git
 gbnuke() {
    git branch -D $1; git push origin :$1; 
 }
+
+## Check sha256
+shacheck-m() { shasum -a 256 $1 }
+
+shacheck-l() { sha256sum $1 }

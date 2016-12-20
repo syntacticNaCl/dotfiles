@@ -480,4 +480,15 @@ call plug#end()
 
 	" Escape slashes in url; used for vagrant
 	nmap <leader>r/ :s/\//\\\/<CR>
+
+	" Reselect visual block after indent/reindent
+	vnoremap < <gv
+	vnoremap > >gv
+
+	" Make Y behave like other capitals
+	map Y y$
+
+	" Improve up/down movement for wrapped lines
+	nnoremap j gj
+	nnoremap k gk
 " }

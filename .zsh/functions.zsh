@@ -154,6 +154,10 @@ TwitchQuill() { livestreamer $PLAYER http://www.twitch.tv/quill18 best; }
 TwitchGeek() { livestreamer $PLAYER www.twitch.tv/geekandsundry best; }
 TwitchHandmade() { livestreamer $PLAYER www.twitch.tv/handmade_hero best; }
 
+# Music
+usic() { sudo killall mpd && mpd && ncmpcpp }
+youtube-dl-m(){ youtube-dl --extract-audio --audio-format mp3 -l "$1"; }
+
 # Shows
 stream-sp(){ livestreamer $PLAYER veetle.com/index.php/channel/view/541c316fe8423/d6fb77db53674e6395c04d2c16bb0951 best; }
 stream-simp(){ livestreamer $PLAYER veetle.com/index.php/channel/view/52dada61bdf13/34cb225e471c64e9b611cc39fa1a45b1 best; }
@@ -180,3 +184,8 @@ gbnuke() {
 shacheck-m() { shasum -a 256 $1 }
 
 shacheck-l() { sha256sum $1 }
+
+## Flush DNS cache on Mac for OS X Yosemite or El Capitan
+dnsflush-m() {
+	sudo dscacheutil -flushcache;sudo killall -HUP mDNSResponder; say cache flushed	 
+}

@@ -5,6 +5,7 @@
 export PATH=/usr/local/bin:$PATH
 export PATH=/usr/local/bin/zsh:$PATH
 export PATH=/usr/bin/nodejs:$PATH
+export PATH=~/.config/composer/vendor/bin:$PATH
 
 # # MySQL
 export PATH="/usr/local/mysql/bin:$PATH"
@@ -36,6 +37,9 @@ export SHELL="/usr/local/bin/zsh"
 export HISTSIZE=32768
 export HISTFILESIZE=$HISTSIZE
 export HISTCONTROL=ignoredups
+
+# GTAGS
+export GTAGSLABEL=pygments
 
 # fix render issues
 export LC_ALL=en_US.UTF-8  

@@ -20,4 +20,3 @@ elif [ -x /usr/local/bin/cowsay -a -x /usr/local/bin/fortune ]; then
     fortune | cowsay -f vader
 fi
 
-

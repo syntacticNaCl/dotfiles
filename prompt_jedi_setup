@@ -15,9 +15,12 @@ function prompt_jedi_precmd {
   setopt LOCAL_OPTIONS
   unsetopt XTRACE KSH_ARRAYS
 
-  # Get Git repository information.
-  if (( $+functions[git-info] )); then
-    git-info
+  # ignore mounted sshfs drives
+  if ! [[ "$PWD" =~ /mnt/ ]]; then
+	  # Get Git repository information.
+	  if (( $+functions[git-info] )); then
+		git-info
+	  fi
   fi
 }
 

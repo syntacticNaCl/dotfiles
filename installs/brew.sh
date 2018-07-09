@@ -16,6 +16,7 @@ brew update
 
 binaries=(
     ant
+	aspell
     cmake
     cowsay
     fortune

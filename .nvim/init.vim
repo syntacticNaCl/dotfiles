@@ -93,7 +93,7 @@ call plug#begin('~/.config/nvim/plugged')
 " }
 
 " " HTML {
-    Plug 'amirh/HTML-AutoCloseTag'
+    "Plug 'amirh/HTML-AutoCloseTag'
     Plug 'gorodinskiy/vim-coloresque'
     Plug 'tpope/vim-haml'
     Plug 'othree/html5.vim'
@@ -177,7 +177,7 @@ call plug#end()
 	augroup END
 
 	" leave insert mode faster
-	inoremap jj <ESC>
+	inoremap jk <ESC>
 	
 	" Instead of reverting the cursor to the last position in the buffer, we
     " set it to the first line when editing a git commit message

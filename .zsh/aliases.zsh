@@ -5,6 +5,7 @@
 alias ga='git add'
 alias gaa='git add -A'
 alias gpush='git push'
+alias gpusho='git push origin'
 alias gpushom='git push origin master'
 alias gl='git log'
 alias gs='git status'
@@ -20,12 +21,19 @@ alias gra='git remote add origin'
 alias grr='git remote rm'
 alias gpull='git pull'
 alias gpullom='git pull origin master'
+alias gpullo='git pull origin'
 alias gcl='git clone'
 alias gta='git tag -a -m'
 alias gf='git reflog'
 alias gstash='git stash'
 alias grefresh='git stash; git pull origin master'
 alias greset='git fetch --all; git reset --hard origin/master'
+alias getB="git branch -a | grep $1"
+alias CB="git branch | awk '/^*/{print $2}'"
+alias brname='git branch -m'
+alias cb='git branch | awk '\''/^*/{print }'\'''
+alias gL='git log --oneline'
+alias gM='git log --merges --oneline'
 
 # more in functions.zsh
 

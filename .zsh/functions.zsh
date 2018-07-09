@@ -187,5 +187,14 @@ shacheck-l() { sha256sum $1 }
 
 ## Flush DNS cache on Mac for OS X Yosemite or El Capitan
 dnsflush-m() {
-	sudo dscacheutil -flushcache;sudo killall -HUP mDNSResponder; say cache flushed	 
+	sudo dscacheutil -flushcache;sudo killall -HUP mDNSResponder; say cache flushed
+}
+
+timestamp() {
+  date +"%T"
+}
+
+dotouch() {
+    $DATETIME=date +"%Y-%m-%d_%H-%M-%S"
+    touch $DATETIME_$1.org
 }

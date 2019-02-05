@@ -35,6 +35,15 @@ alias cb='git branch | awk '\''/^*/{print }'\'''
 alias gL='git log --oneline'
 alias gM='git log --merges --oneline'
 
+# -------------------------------------------------------------------
+# Docker aliases
+# -------------------------------------------------------------------
+alias D='docker exec -it'
+alias DE='docker exec -it'
+alias DC='docker container'
+alias Dcls='docker container ls'
+alias DI='docker image'
+
 # more in functions.zsh
 
 # -------------------------------------------------------------------

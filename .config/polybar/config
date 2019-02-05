@@ -40,10 +40,10 @@ padding-right = 2
 
 module-margin-left = 1
 module-margin-right = 2
-font-0 = "Source Code Pro:size=10;0:antialias=false"
-font-1 = fixed:pixelsize=10;1
-font-2 = unifont:fontformat=truetype:size=8:antialias=false;0
-font-3 = "FontAwesome:pixelsize=10;0"
+; font-0 = "Source Code Pro:size=10;0:antialias=false"
+font-0 = fixed:pixelsize=10;1
+font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
+font-2 = "FontAwesome:pixelsize=10;0"
 
 
 modules-left = i3
@@ -177,11 +177,12 @@ label-visible-background = ${self.label-focused-background}
 label-visible-underline = ${self.label-focused-underline}
 label-visible-padding = ${self.label-focused-padding}
 
-ws-icon-0 = 1;
+ws-icon-0 = 1;
 ws-icon-1 = 2;
 ws-icon-2 = 3;
 ws-icon-3 = 4;
 ws-icon-4 = 5;
+ws-icon-5 = 6;
 ws-icon-default = 
 
 
@@ -223,7 +224,7 @@ card = intel_backlight
 [module/cpu]
 type = internal/cpu
 interval = 2
-format-prefix = " "
+format-prefix = "CPU "
 format-prefix-foreground = ${colors.foreground-alt}
 format-underline = #f90000
 label = %percentage%%
@@ -231,7 +232,7 @@ label = %percentage%%
 [module/memory]
 type = internal/memory
 interval = 2
-format-prefix = " "
+format-prefix = "RAM "
 format-prefix-foreground = ${colors.foreground-alt}
 format-underline = #4bffdc
 label = %percentage_used%%
@@ -239,8 +240,10 @@ label = %percentage_used%%
 [module/wlan]
 type = internal/network
 interface = wlp3s0
+format-connected-prefix = " "
 interval = 3.0
 
+format-connected-prefix-foreground = ${colors.foreground-alt}
 format-connected = <ramp-signal> <label-connected>
 format-connected-underline = #9f78e1
 label-connected = %essid%
@@ -260,7 +263,7 @@ ramp-signal-foreground = ${colors.foreground-alt}
 
 [module/eth]
 type = internal/network
-interface = virbr0-nic
+interface = enp2s0f1
 interval = 3.0
 
 format-connected-underline = #55aa55
@@ -283,6 +286,7 @@ date =  %%{F#99}%m/%d/%Y%%{F-}  %%{F#fff}%H:%M%%{F-}
 ; date-alt = " %Y-%m-%d"
 ;
 ; time = %H:%M
+
 ; time-alt = %H:%M:%S
 
 format-prefix = 
@@ -324,7 +328,6 @@ bar-volume-empty-foreground = ${colors.foreground-alt}
 ;   <ramp-volume>
 ;   <bar-volume>
 ;format-muted = <label-muted>
-
 ; Available tokens:
 ;   %percentage% (default)
 ;label-volume = %percentage%%
@@ -352,11 +355,15 @@ battery = BAT0
 adapter = AC
 full-at = 98
 
+format-battery = <label-battery>
+label-battery-foreground = ${root.foreground}
+
 format-charging = <animation-charging> <label-charging>
 format-charging-underline = #ffb52a
 
 format-discharging = <ramp-capacity> <label-discharging>
 format-discharging-underline = ${self.format-charging-underline}
+label-discharging = %percentage%% %time% 
 
 format-full-prefix = " "
 format-full-prefix-foreground = ${colors.foreground-alt}
@@ -383,7 +390,7 @@ format-underline = #f50a4d
 format-warn = <ramp> <label-warn>
 format-warn-underline = ${self.format-underline}
 
-label = %temperature%
+label =  %temperature%
 label-warn = %temperature%
 label-warn-foreground = ${colors.secondary}
 

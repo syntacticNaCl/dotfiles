@@ -1,0 +1,14 @@
+# -*- mode: snippet -*-
+# name: pubf
+# key: pubf
+# --
+/**
+ * $3
+ *
+ * @param $4
+ * @return $5
+ */
+public function $1(): $6
+{
+    $2
+}

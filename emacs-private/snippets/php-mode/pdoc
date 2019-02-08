@@ -1,0 +1,10 @@
+# -*- mode: snippet -*-
+# name: pdoc
+# key: pdoc
+# --
+/**
+ * $1
+ *
+ * @param $2
+ * @return $3
+ */

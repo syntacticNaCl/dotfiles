@@ -1,0 +1,8 @@
+# -*- mode: snippet -*-
+# name: privf
+# key: privf
+# --
+private function $1()
+{
+    $2
+}

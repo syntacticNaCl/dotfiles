@@ -1,0 +1,8 @@
+# -*- mode: snippet -*-
+# name: prof
+# key: prof
+# --
+protected function $1()
+{
+    $2
+}

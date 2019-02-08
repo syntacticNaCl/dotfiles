@@ -33,7 +33,8 @@ for file in $files; do
 done
 
 # NVIM
-ln -s $dir/.nvim ~/.config/nvim
+ln -s $dir/.config/nvim ~/.config
+ln -s $dir/.config/tmux ~/.config
 
 # Clone Powerline fonts repo
 echo "Cloning 'powerline-fonts' repository..."
@@ -68,3 +69,5 @@ else
     echo ">>> Updating Composer"
     composer self-update
 fi
+
+touch ~/.zsh_secrets

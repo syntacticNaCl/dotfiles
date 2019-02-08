@@ -3,7 +3,7 @@
 .zsh_history
 .vim/docs
 .zsh-update
-.nvim/plugged
+.config/nvim/plugged
 scripts/.*.sh
 scripts/vpn*
 

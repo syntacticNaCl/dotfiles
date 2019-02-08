@@ -27,6 +27,7 @@
     background_type = transparent
     copy_on_selection = True
     cursor_color = "#c5c8c6"
+    custom_command = $(which zsh)
     font = Ubuntu Mono derivative Powerline 11
     foreground_color = "#c5c8c6"
     palette = "#000000:#cc6666:#b5bd68:#f0c674:#81a2be:#b294bb:#8abeb7:#ffffff:#000000:#cc6666:#b5bd68:#f0c674:#81a2be:#b294bb:#8abeb7:#ffffff"
@@ -34,6 +35,7 @@
     scrollback_lines = 1100
     scrollbar_position = hidden
     show_titlebar = False
+    use_custom_command = True
     use_system_font = False
   [[oldscheme]]
     allow_bold = False

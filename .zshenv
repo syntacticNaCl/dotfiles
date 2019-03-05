@@ -20,6 +20,11 @@ eval "$(rbenv init -)"
 export PATH="$HOME/.rbenv/plugins/ruby-build/bin:$PATH"
 fi
 
+## GOLANG
+export PATH=$PATH:/usr/local/go/bin
+export GOPATH=$HOME/Code/go
+export PATH=$PATH:$GOPATH/bin
+
 # Ensure that a non-login, non-interactive shell has a defined environment.
 if [[ "$SHLVL" -eq 1 && ! -o LOGIN && -s "${ZDOTDIR:-$HOME}/.zprofile" ]]; then
   source "${ZDOTDIR:-$HOME}/.zprofile"

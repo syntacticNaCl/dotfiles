@@ -10,7 +10,8 @@
 dir=~/dotfiles                    # dotfiles directory
 olddir=~/dotfiles_old             # old dotfiles backup directory
 files="exports gitinfo zpreztorc zprofile zshenv zshrc zprezto zsh tmux.conf"    # list of files/folders to symlink in homedir
-packages="neovim livestreamer weechat tmux conky zsh firefox ranger"
+configs="compoton polybar rofi terminator"
+packages="neovim livestreamer weechat tmux conky zsh firefox ranger rofi the_silver_searcher terminator docker docker-compose emacs code wine php python-pip youtube-dl keybase"
 
 ##########
 
@@ -31,8 +32,8 @@ done
 # NVIM
 ln -s $dir/.nvim ~/.config/nvim
 
-# Clone Powerline fonts repo
-yaourt -S python2-powerline-git
+# Install Powerline fonts
+pip install --user powerline-status
 
 # Clone the upstream Prezto repo
 echo "Cloning 'prezto' repository..."
@@ -79,6 +80,19 @@ fi
 
 # Setup zsh
 echo "Setting up zsh..."
+
+# Configs
+echo "Creating symlinks for configs..."
+for config in $configs; do
+ln -sf $dir/.config/$config ~/.config
+done
+echo "Symlinking finished!"
+
+# Spacemacs
+echo "Installing spacemacs"
+git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d
+ln -sf $dir/.spacemacs ~/
+ln -sf $dir/emacs-private ~/.emacs.d/private
 
 # Add my secrets file for stuff I dont want version controlled
 touch $dir/.zsh_secrets

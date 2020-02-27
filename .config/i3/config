@@ -257,7 +257,7 @@ exec --no-startup-id /usr/lib/policykit-1-gnome/polkit-gnome-authentication-agen
 exec --no-startup-id i3-msg 'workspace 1; exec /usr/bin/firefox'
 exec --no-startup-id i3-msg 'workspace 2; exec /usr/local/bin/emacs'
 exec --no-startup-id i3-msg 'workspace 3; exec /usr/bin/terminator'
-exec --no-startup-id i3-msg 'workspace 4; exec /usr/bin/weechat'
+exec --no-startup-id i3-msg 'workspace 4; exec /usr/bin/terminator -e weechat'
 exec --no-startup-id i3-msg 'workspace 5; exec /snap/bin/spotify'
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 

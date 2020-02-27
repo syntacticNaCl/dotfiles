@@ -22,7 +22,7 @@ fi
 
 ## GOLANG
 export PATH=$PATH:/usr/local/go/bin
-export GOPATH="$HOME/Code/go"
+export GOPATH=$HOME/Code/go
 export PATH=$PATH:$GOPATH/bin
 
 # Ensure that a non-login, non-interactive shell has a defined environment.

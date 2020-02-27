@@ -20,6 +20,11 @@ eval "$(rbenv init -)"
 export PATH="$HOME/.rbenv/plugins/ruby-build/bin:$PATH"
 fi
 
+## GOLANG
+export PATH=$PATH:/usr/local/go/bin
+export GOPATH="$HOME/Code/go"
+export PATH=$PATH:$GOPATH/bin
+
 # Ensure that a non-login, non-interactive shell has a defined environment.
 if [[ "$SHLVL" -eq 1 && ! -o LOGIN && -s "${ZDOTDIR:-$HOME}/.zprofile" ]]; then
   source "${ZDOTDIR:-$HOME}/.zprofile"
@@ -47,12 +52,6 @@ export LANG=en_US.UTF-8
 
 # Make some commands not show up in history
 export HISTIGNORE="ls:ls *:cd:cd -:pwd;exit:date:* --help"
-
-## MAC ONLY
-if [[ "$OSTYPE" == "darwin"* ]]; then
-	export JAVA7_HOME=`/usr/libexec/java_home -v 1.7`
-	export JAVA8_HOME=`/usr/libexec/java_home -v 1.8`
-fi
 
 # Add homebrew to the completion path
 fpath=("/usr/local/bin/" $fpath)

@@ -38,6 +38,8 @@ zstyle ':prezto:load' pmodule \
   'utility' \
   'syntax-highlighting' \
   'history-substring-search' \
+  'contrib-prompt' \
+  'enhancd' \
   'prompt'
 
 #
@@ -92,7 +94,8 @@ zstyle ':prezto:module:editor' dot-expansion 'yes'
 # Setting it to 'random' loads a random theme.
 # Auto set to 'off' on dumb terminals.
 
-zstyle ':prezto:module:prompt' theme 'jedi'
+# zstyle ':prezto:module:prompt' theme 'jedi'
+zstyle ':prezto:module:prompt' theme 'spaceship'
 
 #
 # Ruby
@@ -162,3 +165,7 @@ zstyle ':prezto:module:syntax-highlighting' styles \
 
 # Integrate with iTerm2.
 zstyle ':prezto:module:tmux:iterm' integrate 'yes'
+
+# Fuzzy
+zstyle ":prezto:module:enhancd" command "fzf:fzy:peco"
+# zstyle ":prezto:module:enhancd" command "cd"

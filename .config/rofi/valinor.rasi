@@ -1,5 +1,6 @@
 /**
  * Author: syntacticNaCl
+ * rofi -modi 'run,ssh,drun,window' -show drun -theme valinor
  */
 
 configuration {

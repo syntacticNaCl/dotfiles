@@ -3,22 +3,8 @@
 # -------------------------------------------------------------------
 
 export PATH=/usr/local/bin:$PATH
-export PATH=/usr/local/bin/zsh:$PATH
 export PATH=/usr/bin/nodejs:$PATH
 export PATH=~/.config/composer/vendor/bin:$PATH
-
-# # MySQL
-export PATH="/usr/local/mysql/bin:$PATH"
-
-# # ANT
-export PATH="/usr/share/ant/bin/ant:$PATH"
-
-if [[ '$(uname)' == 'Linux' ]]; then
-## Ruby
-export PATH="$HOME/.rbenv/bin:$PATH"
-eval "$(rbenv init -)"
-export PATH="$HOME/.rbenv/plugins/ruby-build/bin:$PATH"
-fi
 
 ## GOLANG
 export PATH=$PATH:/usr/local/go/bin

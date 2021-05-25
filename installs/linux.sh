@@ -3,17 +3,39 @@ nixfiles="i3 compton polybar rofi terminator" #list of files that should be inst
 
 echo "Installing languages and dependencies..."
 sudo apt-get update
-sudo apt-get install build-essential
-sudo apt-get install cmake
-sudo apt-get install ruby-full
-sudo apt-get install python
-sudo apt-get install python-dev python-pip python3-dev python3-pip
-sudo apt-get install libsqlite3-dev
-sudo apt-get install sqlite3 # for the command-line client
-sudo apt-get install bzip2 libbz2-dev
+sudo apt-get install \
+	build-essential \
+	cmake \
+    apt-transport-https \
+    ca-certificates \
+    curl \
+    gnupg \
+    lsb-release
+	python \
+	python3-pip \
+	python3-dev	\
+	libssl-dev \
+	libffi-dev \
+	python3-venv \
+	nodejs \
+	npm \
+	sqlite3
 
-echo "Updating, then installing i3, dmenu, ranger and terminator..."
-sudo apt-get update && sudo apt-get install i3 i3lock dmenu ranger terminator rofi silversearcher-ag zsh
+echo "Installing apps..."
+sudo apt-get update 
+sudo apt-get install -y \
+	i3 \
+	i3lock \
+	dmenu \
+	ranger \
+	terminator \
+	rofi \
+	silversearcher-ag \
+	zsh \
+	flatpak \
+	feh \
+	tmux\
+	neofetch
 
 echo "Building emacs dependencies..."
 sudo apt-get build-dep emacs
@@ -31,25 +53,18 @@ ln -sf $dir/emacs-private ~/.emacs.d/private
 
 echo "Installing docker and docker-compose..."
 sudo apt update && sudo apt install apt-transport-https ca-certificates curl software-properties-common
-curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
-sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu bionic stable"
-sudo apt update
-apt-cache policy docker-ce
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
+echo \
+  "deb [arch=amd64 signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu \
+  $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
 
-install_dockerce() {
-   echo "Installing docker-ce..."
-   sudo apt install docker-ce
-}
+sudo apt-get update
+sudo apt-get install \
+	docker-ce \
+	docker-ce-cli \
+	containerd.io
 
-read -p $'\nIs this the correct docker-ce distribution? ' docker_choice
-case "$docker_choice" in
-	y|Y ) install_dockerce;;
-	n|N ) echo "docker-ce not verified and not installed";;
-	  * ) echo "invalid input";;
-esac
-
-echo "Installing docker-compose..."
-sudo curl -L "https://github.com/docker/compose/releases/download/1.23.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+sudo curl -L "https://github.com/docker/compose/releases/download/1.28.5/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
 sudo chmod +x /usr/local/bin/docker-compose
 
 echo "Creating symlinks for configs..."

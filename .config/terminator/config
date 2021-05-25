@@ -1,12 +1,52 @@
 [global_config]
-  title_inactive_bg_color = "#000000"
-  title_receive_bg_color = "#00c965"
-  title_transmit_bg_color = "#000000"
   title_transmit_fg_color = "#1e1e1e"
+  title_transmit_bg_color = "#000000"
+  title_receive_bg_color = "#00c965"
+  title_inactive_bg_color = "#000000"
 [keybindings]
-  next_tab = <Primary>Tab
-  page_down = <Primary>d
   page_up = <Primary>u
+  page_down = <Primary>d
+  next_tab = <Primary>Tab
+[profiles]
+  [[default]]
+    background_color = "#1d1f21"
+    background_darkness = 0.83
+    background_type = transparent
+    cursor_color = "#c5c8c6"
+    cursor_color_fg = False
+    font = FiraCode Nerd Font 11
+    foreground_color = "#c5c8c6"
+    show_titlebar = False
+    scrollbar_position = hidden
+    scrollback_lines = 1100
+    scrollback_infinite = True
+    palette = "#000000:#cc6666:#b5bd68:#f0c674:#81a2be:#b294bb:#8abeb7:#ffffff:#000000:#cc6666:#b5bd68:#f0c674:#81a2be:#b294bb:#8abeb7:#ffffff"
+    use_custom_command = True
+    custom_command = $(which zsh)
+    use_system_font = False
+    copy_on_selection = True
+  [[oldscheme]]
+    allow_bold = False
+    icon_bell = False
+    background_color = "#222222"
+    background_darkness = 1.0
+    color_scheme = custom
+    cursor_shape = underline
+    cursor_color = "#ffffff"
+    font = Monospace 10
+    foreground_color = "#bdbdbd"
+    show_titlebar = False
+    scrollbar_position = hidden
+    scrollback_lines = 5000
+    scrollback_infinite = True
+    palette = "#000000:#aa0000:#00aa00:#aa5500:#0000aa:#aa00aa:#00aaaa:#aaaaaa:#555555:#ff5555:#55ff55:#ffff55:#5555ff:#ff55ff:#55ffff:#ffffff"
+    use_system_font = False
+  [[solarized-dark]]
+    background_color = "#002b36"
+    cursor_color = "#eee8d5"
+    foreground_color = "#eee8d5"
+    show_titlebar = False
+    palette = "#073642:#dc322f:#859900:#b58900:#268bd2:#d33682:#2aa198:#eee8d5:#002b36:#cb4b16:#586e75:#657b83:#839496:#6c71c4:#93a1a1:#fdf6e3"
 [layouts]
   [[default]]
     [[[child1]]]
@@ -20,41 +60,3 @@
       size = 700, 450
       type = Window
 [plugins]
-[profiles]
-  [[default]]
-    background_color = "#1d1f21"
-    background_darkness = 0.83
-    background_type = transparent
-    copy_on_selection = True
-    cursor_color = "#c5c8c6"
-    custom_command = $(which zsh)
-    font = Ubuntu Mono derivative Powerline 11
-    foreground_color = "#c5c8c6"
-    palette = "#000000:#cc6666:#b5bd68:#f0c674:#81a2be:#b294bb:#8abeb7:#ffffff:#000000:#cc6666:#b5bd68:#f0c674:#81a2be:#b294bb:#8abeb7:#ffffff"
-    scrollback_infinite = True
-    scrollback_lines = 1100
-    scrollbar_position = hidden
-    show_titlebar = False
-    use_custom_command = True
-  [[oldscheme]]
-    allow_bold = False
-    background_color = "#222222"
-    background_darkness = 1.0
-    color_scheme = custom
-    cursor_color = "#ffffff"
-    cursor_shape = underline
-    font = Monospace 10
-    foreground_color = "#bdbdbd"
-    icon_bell = False
-    palette = "#000000:#aa0000:#00aa00:#aa5500:#0000aa:#aa00aa:#00aaaa:#aaaaaa:#555555:#ff5555:#55ff55:#ffff55:#5555ff:#ff55ff:#55ffff:#ffffff"
-    scrollback_infinite = True
-    scrollback_lines = 5000
-    scrollbar_position = hidden
-    show_titlebar = False
-    use_system_font = False
-  [[solarized-dark]]
-    background_color = "#002b36"
-    cursor_color = "#eee8d5"
-    foreground_color = "#eee8d5"
-    palette = "#073642:#dc322f:#859900:#b58900:#268bd2:#d33682:#2aa198:#eee8d5:#002b36:#cb4b16:#586e75:#657b83:#839496:#6c71c4:#93a1a1:#fdf6e3"
-    show_titlebar = False

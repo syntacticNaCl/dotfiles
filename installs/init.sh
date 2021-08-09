@@ -14,14 +14,14 @@ dir=~/dotfiles
 if [ -f /etc/arch-release ] ; then
   sh $dir/installs/arch.sh
 else
-  # Common files
-  sh $dir/installs/common.sh
   # Linux Only
   if [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]; then
     sh $dir/installs/linux.sh
     sh $dir/installs/nix-powerline.sh
   else
-    sh $dir/installs/brew.sh
-    sh $dir/installs/brew-apps.sh
+    sh $dir/installs/darwin.sh
   fi
+
+  # Common files
+  sh $dir/installs/common.sh
 fi

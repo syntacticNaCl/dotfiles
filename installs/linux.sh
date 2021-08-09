@@ -1,5 +1,6 @@
 dir=~/dotfiles
 nixfiles="i3 compton polybar rofi terminator" #list of files that should be installed on nix systems only
+POWERLINE_FONTS_DIRECTORY="${HOME}/.powerline-fonts"
 
 echo "Installing languages and dependencies..."
 sudo apt-get update
@@ -19,7 +20,8 @@ sudo apt-get install \
 	python3-venv \
 	nodejs \
 	npm \
-	sqlite3
+	sqlite3 \
+	fonts-powerline
 
 echo "Installing apps..."
 sudo apt-get update 
@@ -69,6 +71,18 @@ sudo chmod +x /usr/local/bin/docker-compose
 
 echo "Creating symlinks for configs..."
 for nixfile in $nixfiles; do
-ln -sf $dir/.config/$nixfile ~/.config
+ln -sf $dir/.config/$nixfile ~/.config/$nixfile
 done
 echo "Symlinking finished!"
+
+echo "Installing fonts"
+
+# Clone Powerline fonts repo
+echo "Cloning 'powerline-fonts' repository..."
+git clone https://github.com/powerline/fonts.git "${ZDOTDIR:-$HOME}/dotfiles/"
+
+# Setup powerline-fonts
+echo "Configuring powerline-fonts..."
+cd ${POWERLINE_FONTS_DIRECTORY}
+./install.sh >/dev/null
+cd ${DOTFILES_DIRECTORY}

@@ -1,0 +1,29 @@
+{
+    "coc.preferences.formatOnSaveFiletypes": [
+        "javascript",
+        "typescript",
+        "typescriptreact",
+        "json",
+        "javascriptreact",
+        "typescript.tsx",
+        "python",
+        "ruby"
+    ],
+    "coc.preferences.diagnostic.virtualText": true,
+    "python.linting.enabled": true,
+    "python.linting.pylintEnabled": true,
+    "snippets.ultisnips.directories": [
+        "UltiSnips",
+        "~/.config/nvim/utils/snips"
+    ],
+    "eslint.filetypes": [
+        "javascript",
+        "typescript",
+        "typescriptreact",
+        "javascriptreact",
+        "typescript.tsx"
+    ],
+    "eslint.format.enable": true,
+    "eslint.autoFixOnSave": false,
+    "eslint.codeActionsOnSave.mode": "problems"
+}

@@ -5,6 +5,7 @@
 export PATH=/usr/local/bin:$PATH
 export PATH=/usr/bin/nodejs:$PATH
 export PATH=~/.config/composer/vendor/bin:$PATH
+export PATH=/usr/local/sbin:$PATH
 
 ## GOLANG
 export PATH=$PATH:/usr/local/go/bin
@@ -40,4 +41,10 @@ export LANG=en_US.UTF-8
 export HISTIGNORE="ls:ls *:cd:cd -:pwd;exit:date:* --help"
 
 # Add homebrew to the completion path
-fpath=("/usr/local/bin/" $fpath)
+if type brew &>/dev/null; then
+  FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
+
+  autoload -Uz compinit
+  compinit
+fi
+

@@ -18,6 +18,7 @@ binaries=(
     cmake
     cowsay
     exiftool
+    fd
     fortune
     fzf
     git

@@ -53,6 +53,8 @@ This function should only modify configuration layer settings."
      javascript
      pandoc
      restclient
+     (ruby :variables ruby-enable-enh-ruby-mode t)
+     ruby-on-rails
      rust
      lsp
      (markdown :variables
@@ -538,7 +540,7 @@ before packages are loaded."
   (setq create-lockfiles nil)
 
   ;; Org-mode
-  org-bullets-bullet-list '("■" "◆" "▲" "▶")
+  ;org-bullets-bullet-list '("■" "◆" "▲" "▶")
 
   (add-hook 'js2-mode-hook 'prettier-js-mode)
   (add-hook 'typescript-mode-hook 'prettier-js-mode)

@@ -92,3 +92,9 @@ setopt RC_EXPAND_PARAM
 # fix color issues in tmux
 export TERM=xterm-256color
 [ -n "$TMUX" ] && export TERM=screen-256color
+
+# FZF
+export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --exclude .git'
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND" 
+export FZF_DEFAULT_OPTS='--reverse --preview "bat --style=numbers --color=always --line-range :500 {}"'
+

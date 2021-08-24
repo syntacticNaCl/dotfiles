@@ -93,8 +93,29 @@ setopt RC_EXPAND_PARAM
 export TERM=xterm-256color
 [ -n "$TMUX" ] && export TERM=screen-256color
 
+# Larger bash history (allow 32³ entries; default is 500)
+export HISTSIZE=32768
+export HISTFILESIZE=$HISTSIZE
+export HISTCONTROL=ignoredups
+#
+# Make some commands not show up in history
+export HISTIGNORE="ls:ls *:cd:cd -:pwd;exit:date:* --help"
+
+# Highlight section titles in manual pages
+export LESS_TERMCAP_md="$ORANGE"
+# set $SHELL
+export SHELL="/usr/local/bin/zsh"
+
+# GTAGS
+export GTAGSLABEL=pygments
+
+# fix render issues
+export LC_ALL=en_US.UTF-8  
+export LANG=en_US.UTF-8
+
 # FZF
 export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --exclude .git'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND" 
 export FZF_DEFAULT_OPTS='--reverse --preview "bat --style=numbers --color=always --line-range :500 {}"'
 
+export DOTFILES="$HOME/dotfiles"

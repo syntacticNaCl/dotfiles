@@ -207,6 +207,10 @@ alias s8init="sudo npm install && bower install"
 # -------------------------------------------------------------------
 
 alias myssh="pbcopy < ~/.ssh/id_rsa.pub"
+alias cat="bat"
+alias e="emacs"
+# Run emacs without X
+alias ec="emacs -nw"
 
 # -------------------------------------------------------------------
 # MakeMacBetter aliases

@@ -42,6 +42,9 @@
 	" Search with Rg
 	nnoremap <leader>rg :Rg
 
+	" Search with /
+	nnoremap <leader>/ :Rg
+
 	" Fold tag
 	nnoremap <leader>ft Vatzf
 

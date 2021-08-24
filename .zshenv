@@ -5,6 +5,7 @@
 export PATH=/usr/local/bin:$PATH
 export PATH=/usr/bin/nodejs:$PATH
 export PATH=~/.config/composer/vendor/bin:$PATH
+export PATH=$PATH:~/.emacs.d/bin
 export PATH=/usr/local/sbin:$PATH
 
 ## GOLANG

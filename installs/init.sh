@@ -10,18 +10,19 @@
 # dotfiles directory
 dir=~/dotfiles
 
-# Arch is different
-if [ -f /etc/arch-release ] ; then
+# Debian
+if command -v apt-get 2>&1 >/dev/null; then
+  sh $dir/installs/linux.sh
+  sh $dir/installs/nix-powerline.sh
+# RHEL
+elif command -v rpm 2>&1 >/dev/null; then
+  sh $dir/installs/fedora.sh
+# Arch
+elif command -v pacman 2>&1 >/dev/null; then
   sh $dir/installs/arch.sh
+# MacOS
 else
-  # Linux Only
-  if [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]; then
-    sh $dir/installs/linux.sh
-    sh $dir/installs/nix-powerline.sh
-  else
-    sh $dir/installs/darwin.sh
-  fi
-
-  # Common files
-  sh $dir/installs/common.sh
+  sh $dir/installs/darwin.sh
 fi
+
+sh $dir/installs/common.sh

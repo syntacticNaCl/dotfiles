@@ -6,8 +6,8 @@
 
 ;; Some functionality uses this to identify you, e.g. GPG configuration, email
 ;; clients, file templates and snippets.
-(setq user-full-name "John Doe"
-      user-mail-address "john@doe.com")
+(setq user-full-name "Garrett Rappaport"
+      user-mail-address "garrett@syntacticnacl.com")
 
 ;; Doom exposes five (optional) variables for controlling fonts in Doom. Here
 ;; are the three important ones:
@@ -51,6 +51,8 @@
       scroll-margin 2)                            ; It's nice to maintain a little margin
 
 
+(setq display-line-numbers-type 'relative)
+
 ;; Here are some additional functions/macros that could help you configure Doom:
 ;;
 ;; - `load!' for loading external *.el files relative to this one
@@ -74,9 +76,19 @@
    evil-escape-delay 0.2
    evil-escape-unordered-key-sequence "true"))
 
+(after! company
+  (setq company-idle-delay 0.5
+        company-minimum-prefix-length 2)
+  (setq company-show-numbers t)
+  (add-hook 'evil-normal-state-entry-hook #'company-abort)) ;; make aborting less annoying.
+
+
 (display-time-mode 1)                             ; Enable time in the mode-line
 
 (unless (string-match-p "^Power N/A" (battery))   ; On laptops...
   (display-battery-mode 1))                       ; it's nice to know how much power you have
 
 (global-subword-mode 1)
+
+(add-hook 'python-mode-hook #'format-all-mode)
+(add-hook 'shell-mode-hook #'format-all-mode)

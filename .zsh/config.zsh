@@ -103,8 +103,6 @@ export HISTIGNORE="ls:ls *:cd:cd -:pwd;exit:date:* --help"
 
 # Highlight section titles in manual pages
 export LESS_TERMCAP_md="$ORANGE"
-# set $SHELL
-export SHELL="/usr/local/bin/zsh"
 
 # GTAGS
 export GTAGSLABEL=pygments

@@ -69,8 +69,12 @@ fonts=(
 echo "Installing binaries..."
 brew install ${binaries[@]}
 
+echo "Setting defaults"
 # To install useful key bindings and fuzzy completion:
 $(brew --prefix)/opt/fzf/install
+
+# Set default shell
+sudo sh -c "echo $(which zsh) >> /etc/shells" && chsh -s $(which zsh)
 
 echo "Installing casks..."
 brew install --cask ${casks[@]}

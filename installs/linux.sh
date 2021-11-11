@@ -134,3 +134,6 @@ echo "Configuring powerline-fonts..."
 cd ${POWERLINE_FONTS_DIRECTORY}
 ./install.sh >/dev/null
 cd ${DOTFILES_DIRECTORY}
+
+# Set defaults
+chsh -s $(which zsh) $USER

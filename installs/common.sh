@@ -37,11 +37,6 @@ git clone https://github.com/tmux-plugins/tpm ~/.config/tmux/plugins/tpm
 echo "Cloning 'prezto' repository..."
 git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$HOME}/dotfiles/.zprezto"
 
-#change shell to zsh if set to something else
-if [[ ! $(echo $SHELL) == $(which zsh) ]]; then
-    chsh -s $(which zsh)
-fi
-
 # Emacs
 ln -sf ~/dir/emacs-private/functions ~/.emacs-d/private/functions
 ln -sf ~/dir/emacs-private/local ~/.emacs-d/private/local

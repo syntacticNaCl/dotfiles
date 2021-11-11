@@ -14,10 +14,8 @@ source ~/.zsh_secrets
 #------------------------------------------
 # STARTUP
 #------------------------------------------
-if [ -x $(which neofetch) ]; then
+if ! command -v neofetch &> /dev/null; then
     neofetch
-elif [ -x /usr/local/bin/cowsay -a -x /usr/local/bin/fortune ]; then
-    fortune | cowsay -f vader
 fi
 
 

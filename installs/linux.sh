@@ -1,9 +1,53 @@
+#!/bin/bash
+
 dir=~/dotfiles
 nixfiles="i3 compton polybar rofi terminator" #list of files that should be installed on nix systems only
 POWERLINE_FONTS_DIRECTORY="${HOME}/.powerline-fonts"
 
+deps=(
+	build-essential
+	cmake
+	apt-transport-https
+	ca-certificates
+	curl
+	gnupg
+	lsb-release
+	python
+	python3-pip
+	python3-dev
+	libssl-dev
+	libffi-dev
+	python3-venv
+	nodejs
+	npm
+	sqlite3
+	fonts-powerline
+)
+
+apps=(
+	i3
+	i3lock
+	dmenu
+	ranger
+	terminator
+	rofi
+	silversearcher-ag
+	zsh
+	flatpak
+	feh
+	tmux
+	fzf
+	ripgrep
+	fd
+	bat
+	neofetch
+)
+
 echo "Installing languages and dependencies..."
 sudo apt-get update
+
+sudo apt install -y ${deps[@]}
+sudo apt install -y ${apps[@]}
 sudo apt-get install \
 	build-essential \
 	cmake \
@@ -36,7 +80,11 @@ sudo apt-get install -y \
 	zsh \
 	flatpak \
 	feh \
-	tmux\
+	tmux \
+	fzf \
+	ripgrep \
+	fd \
+	bat \
 	neofetch
 
 echo "Building emacs dependencies..."

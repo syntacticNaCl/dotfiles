@@ -17,11 +17,13 @@ binaries=(
     aspell
     cmake
     cowsay
+    coreutils
     exiftool
     fd
     fortune
     fzf
     git
+    gnu-time
     gotop
     imap-uw
     irssi
@@ -48,7 +50,6 @@ binaries=(
 casks=(
     alfred
     bitwarden
-    emacs
     firefox
     gimp
     iterm2
@@ -82,6 +83,14 @@ brew install --cask ${casks[@]}
 echo "Installing fonts..."
 brew tap homebrew/cask-fonts
 brew install --cask ${fonts[@]}
+
+echo "Installing xcode"
+xcode-select --install
+
+echo "Installing Emacs"
+brew tap railwaycat/emacsmacport
+brew install emacs-mac --with-modules
+ln -s /usr/local/opt/emacs-mac/Emacs.app /Applications/Emacs.app
 
 echo "Cleaning up..."
 brew cleanup

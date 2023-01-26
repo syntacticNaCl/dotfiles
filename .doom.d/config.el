@@ -6,7 +6,7 @@
 
 ;; Some functionality uses this to identify you, e.g. GPG configuration, email
 ;; clients, file templates and snippets.
-(setq user-full-name "Garrett Rappaport"
+(setq user-full-name "syntacticNaCl"
       user-mail-address "garrett@syntacticnacl.com")
 
 ;; Doom exposes five (optional) variables for controlling fonts in Doom. Here
@@ -31,7 +31,19 @@
 
 ;; If you use `org' and don't want your org files in the default location below,
 ;; change `org-directory'. It must be set before org loads!
-(setq org-directory "~/org/")
+(after! org
+  (setq
+        org-directory "~/Sync/org/"
+        org-todo-keywords '((sequence "TODO(t)" "INPROGRESS(i)" "WAIT(w)" "|" "DONE(d)" "CANCELLED(c)"))
+        org-todo-keyword-faces
+        '(("TODO" :foreground "#7c7c75" :weight normal :underline t)
+          ("WAIT" :foreground "#9f7efe" :weight normal :underline t)
+          ("INPROGRESS" :foreground "#0098dd" :weight normal :underline t)
+          ("DONE" :foreground "#50a14f" :weight normal :underline t)
+          ("CANCELLED" :foreground "#ff6480" :weight normal :underline t))
+        org-log-done 'time
+        org-agenda-files (list "~/Sync/org/agenda.org" "~/Sync/org/done.org")))
+
 
 ;; This determines the style of line numbers in effect. If set to `nil', line
 ;; numbers are disabled. For relative line numbers, set this to `relative'.
@@ -49,9 +61,6 @@
       password-cache-expiry nil                   ; I can trust my computers ... can't I?
       ;; scroll-preserve-screen-position 'always     ; Don't have `point' jump around
       scroll-margin 2)                            ; It's nice to maintain a little margin
-
-
-(setq display-line-numbers-type 'relative)
 
 ;; Here are some additional functions/macros that could help you configure Doom:
 ;;
@@ -85,10 +94,13 @@
 
 (display-time-mode 1)                             ; Enable time in the mode-line
 
-(unless (string-match-p "^Power N/A" (battery))   ; On laptops...
-  (display-battery-mode 1))                       ; it's nice to know how much power you have
+; (unless (string-match-p "^Power N/A" (battery))   ; On laptops...
+;   (display-battery-mode 1))                       ; it's nice to know how much power you have
 
 (global-subword-mode 1)
 
 (add-hook 'python-mode-hook #'format-all-mode)
 (add-hook 'shell-mode-hook #'format-all-mode)
+
+(custom-set-variables
+ '(initial-frame-alist (quote ((fullscreen . maximized)))))

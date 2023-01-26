@@ -217,3 +217,12 @@ wheaders() {
   fi
   curl -sD - -o /dev/null $1
 }
+
+benchmark() {
+  if [ -z "$1" ]; then
+    echo "Please provide a command to benchmark"
+    return 1
+  fi
+
+  gtime -f "=======BENCHMARK=======\n\n%E TOTAL,\n%U USER,\n%S SYS" $@
+}

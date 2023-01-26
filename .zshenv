@@ -31,3 +31,4 @@ if type brew &>/dev/null; then
   autoload -Uz compinit
   compinit
 fi
+. "$HOME/.cargo/env"

@@ -30,6 +30,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
 		\'coc-snippets',
 		\'coc-eslint',
 		\'coc-vimlsp',
+		\'coc-go',
 		\'coc-pyright']
 
 " Code linting and helpers

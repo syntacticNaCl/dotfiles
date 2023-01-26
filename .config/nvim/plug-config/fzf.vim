@@ -20,5 +20,5 @@ let g:fzf_colors =
 	\ 'spinner': ['fg', 'Label'],
 	\ 'header':  ['fg', 'Comment'] }
 
-nnoremap <C-p> :FZF<CR>
+nnoremap <C-p> :FZF --bind ctrl-p:abort<CR>
 nmap <silent> <leader>m :History<CR>

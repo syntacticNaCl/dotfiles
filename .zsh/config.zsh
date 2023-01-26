@@ -117,3 +117,5 @@ export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 export FZF_DEFAULT_OPTS='--reverse --preview "bat --style=numbers --color=always --line-range :500 {}"'
 
 export DOTFILES="$HOME/dotfiles"
+
+export OBJC_DISABLE_INITIALIZE_FORK_SAFETY=YES

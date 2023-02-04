@@ -31,4 +31,9 @@ if type brew &>/dev/null; then
   autoload -Uz compinit
   compinit
 fi
+
+# Fix gpg errors
+GPG_TTY=$(tty)
+export GPG_TTY
+
 . "$HOME/.cargo/env"

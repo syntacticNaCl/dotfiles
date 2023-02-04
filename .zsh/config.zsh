@@ -112,9 +112,31 @@ export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 
 # FZF
+# Use ~~ as the trigger sequence instead of the default **
+export FZF_COMPLETION_TRIGGER='~~'
+
+# Options to fzf command
+export FZF_COMPLETION_OPTS='--border --info=inline'
 export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --exclude .git'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND" 
 export FZF_DEFAULT_OPTS='--reverse --preview "bat --style=numbers --color=always --line-range :500 {}"'
+
+# Preview file content using bat (https://github.com/sharkdp/bat)
+export FZF_CTRL_T_OPTS="
+  --preview 'bat -n --color=always {}'
+  --bind 'ctrl-/:change-preview-window(down|hidden|)'"
+
+# CTRL-/ to toggle small preview window to see the full command
+# CTRL-Y to copy the command into clipboard using pbcopy
+export FZF_CTRL_R_OPTS="
+  --preview 'echo {}' --preview-window up:3:hidden:wrap
+  --bind 'ctrl-/:toggle-preview'
+  --bind 'ctrl-y:execute-silent(echo -n {2..} | pbcopy)+abort'
+  --color header:italic
+  --header 'Press CTRL-Y to copy command into clipboard'"
+
+# Print tree structure in the preview window
+export FZF_ALT_C_OPTS="--preview 'tree -C {}'"
 
 export DOTFILES="$HOME/dotfiles"
 

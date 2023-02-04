@@ -15,6 +15,7 @@ brew update
 # Install homebrew recipes
 binaries=(
     aspell
+    bat
     cmake
     cowsay
     coreutils
@@ -24,6 +25,7 @@ binaries=(
     fzf
     git
     gnu-time
+    gnupg
     gotop
     imap-uw
     irssi

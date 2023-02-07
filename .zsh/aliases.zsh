@@ -2,6 +2,7 @@
 # Git aliases
 # -------------------------------------------------------------------
 
+alias g="git"
 alias ga='git add'
 alias gaa='git add -A'
 alias gpush='git push'

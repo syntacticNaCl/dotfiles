@@ -25,7 +25,8 @@
        ;;helm              ; the *other* search engine for love and life
        ;;ido               ; the other *other* search engine...
        ;;ivy               ; a search engine for love and life
-       (vertico +icons)    ; the search engine of the future
+       (vertico            ; the search engine of the future
+        +icons +childframe)
 
        :ui
        ;;deft              ; notational velocity for Emacs
@@ -112,7 +113,7 @@
 
        :os
        (:if IS-MAC macos)  ; improve compatibility with macOS
-       tty                 ; improve the terminal Emacs experience
+       ;;tty               ; improve the terminal Emacs experience
 
        :lang
        ;;agda              ; types of types of types of types...
@@ -149,7 +150,7 @@
        ;;lean              ; for folks with too much to prove
        ;;ledger            ; be audit you can be
        ;;lua               ; one-based indices? one-based indices
-       markdown            ; writing docs for people to ignore
+       (markdown +grip)    ; writing docs for people to ignore
        ;;nim               ; python + lisp at the speed of c
        ;;nix               ; I hereby declare "nix geht mehr!"
        ;;ocaml             ; an objective camel

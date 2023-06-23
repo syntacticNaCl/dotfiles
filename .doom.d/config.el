@@ -26,8 +26,8 @@
 ;; There are two ways to load a theme. Both assume the theme is installed and
 ;; available. You can either set `doom-theme' or manually load a theme with the
 ;; `load-theme' function. This is the default:
-(setq doom-theme 'doom-one)
-; (setq doom-theme 'doom-dracula)
+;; (setq doom-theme 'doom-one)
+(setq doom-theme 'doom-dracula)
 
 ;; If you use `org' and don't want your org files in the default location below,
 ;; change `org-directory'. It must be set before org loads!
@@ -85,11 +85,11 @@
    evil-escape-delay 0.2
    evil-escape-unordered-key-sequence "true"))
 
-(after! company
-  (setq company-idle-delay 0.5
-        company-minimum-prefix-length 2)
-  (setq company-show-numbers t)
-  (add-hook 'evil-normal-state-entry-hook #'company-abort)) ;; make aborting less annoying.
+;; (after! company
+;;   (setq company-idle-delay 0.5
+;;         company-minimum-prefix-length 2)
+;;   (setq company-show-quick-access t)
+;;   (add-hook 'evil-normal-state-entry-hook #'company-abort)) ;; make aborting less annoying.
 
 
 (display-time-mode 1)                             ; Enable time in the mode-line
@@ -99,7 +99,9 @@
 
 (global-subword-mode 1)
 
+
 (add-hook 'python-mode-hook #'format-all-mode)
+(add-hook 'python-mode-hook 'anaconda-mode 'anaconda-eldoc-mode)
 (add-hook 'shell-mode-hook #'format-all-mode)
 
 (custom-set-variables

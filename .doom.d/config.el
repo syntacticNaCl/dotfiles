@@ -103,6 +103,7 @@
 (add-hook 'python-mode-hook #'format-all-mode)
 (add-hook 'python-mode-hook 'anaconda-mode 'anaconda-eldoc-mode)
 (add-hook 'shell-mode-hook #'format-all-mode)
+(add-hook 'go-mode-hook #'format-all-mode)
 
 (custom-set-variables
  '(initial-frame-alist (quote ((fullscreen . maximized)))))

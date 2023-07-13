@@ -22,7 +22,7 @@ export GOPATH=$HOME/go
 export PATH=$PATH:$GOPATH/bin
 
 ## Doom emacs
-export PATH=$PATH:$HOME/.config/emacs/bin
+export PATH=$PATH:$HOME/.emacs.d/bin
 
 # Add homebrew to the completion path
 if type brew &>/dev/null; then

@@ -99,11 +99,20 @@
 
 (global-subword-mode 1)
 
+; Projectile
+(setq
+ projectile-project-search-path '("~/code/github.com"))
 
 (add-hook 'python-mode-hook #'format-all-mode)
 (add-hook 'python-mode-hook 'anaconda-mode 'anaconda-eldoc-mode)
 (add-hook 'shell-mode-hook #'format-all-mode)
-(add-hook 'go-mode-hook #'format-all-mode)
+
+;; Set up before-save hooks to format buffer and add/delete imports.
+;; Make sure you don't have other gofmt/goimports hooks enabled.
+(defun lsp-go-install-save-hooks ()
+  (add-hook 'before-save-hook #'lsp-format-buffer t t)
+  (add-hook 'before-save-hook #'lsp-organize-imports t t))
+(add-hook 'go-mode-hook #'format-all-mode #'lsp-go-install-save-hooks)
 
 (custom-set-variables
  '(initial-frame-alist (quote ((fullscreen . maximized)))))

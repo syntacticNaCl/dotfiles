@@ -107,12 +107,16 @@
 (add-hook 'python-mode-hook 'anaconda-mode 'anaconda-eldoc-mode)
 (add-hook 'shell-mode-hook #'format-all-mode)
 
-;; Set up before-save hooks to format buffer and add/delete imports.
-;; Make sure you don't have other gofmt/goimports hooks enabled.
+(add-hook 'go-mode-hook #'lsp-deferred)
 (defun lsp-go-install-save-hooks ()
   (add-hook 'before-save-hook #'lsp-format-buffer t t)
   (add-hook 'before-save-hook #'lsp-organize-imports t t))
-(add-hook 'go-mode-hook #'format-all-mode #'lsp-go-install-save-hooks)
+(add-hook 'go-mode-hook #'lsp-go-install-save-hooks)
+
+(eval-after-load 'flycheck
+  '(add-hook 'flycheck-mode-hook #'flycheck-golangci-lint-setup))
+
+(setq flycheck-golangci-lint-fast t)
 
 (custom-set-variables
  '(initial-frame-alist (quote ((fullscreen . maximized)))))

@@ -37,17 +37,18 @@
        hl-todo             ; highlight TODO/FIXME/NOTE/DEPRECATED/HACK/REVIEW
        ;;hydra
        indent-guides       ; highlighted indent columns
-       ;;(ligatures +extras) ; ligatures and symbols to make your code pretty again
+       (ligatures +extras) ; ligatures and symbols to make your code pretty again
        minimap             ; show a map of the code on the side
        modeline            ; snazzy, Atom-inspired modeline, plus API
-       ;;nav-flash         ; blink cursor line after big motions
+       nav-flash           ; blink cursor line after big motions
        ;;neotree           ; a project drawer, like NERDTree for vim
        ophints             ; highlight the region an operation acts on
-       (popup +defaults)   ; tame sudden yet inevitable temporary windows
+       (popup              ; tame sudden yet inevitable temporary windows
+        +all +defaults)
        ;;tabs              ; a tab bar for Emacs
        treemacs            ; a project drawer, like neotree but cooler
        ;;unicode           ; extended unicode support for various languages
-       vc-gutter           ; vcs diff in the fringe
+       (vc-gutter +pretty) ; vcs diff in the fringe
        vi-tilde-fringe     ; fringe tildes to mark beyond EOB
        window-select       ; visually switch windows
        workspaces          ; tab emulation, persistence & separate workspaces
@@ -72,7 +73,7 @@
         +icons)             ; fancy icons
         ;+ranger)           ; ranger dired
        electric            ; smarter, keyword-based electric-indent
-       ;;ibuffer           ; interactive buffer management
+       (ibuffer +icons)    ; interactive buffer management
        undo                ; persistent, smarter undo for your inevitable mistakes
        vc                  ; version-control and Emacs, sitting in a tree
 
@@ -139,14 +140,16 @@
        ;;fstar             ; (dependent) types and (monadic) effects and Z3
        ;;gdscript          ; the language you waited for
        (go                 ; the hipster dialect
-        +lsp +tree-sitter)
+        +lsp 
+        +tree-sitter)
        ;;(haskell +dante)  ; a language that's lazier than I am
        ;;hy                ; readability of scheme w/ speed of python
        ;;idris             ; a language you can depend on
        json                ; At least it ain't XML
        ;;(java +meghanada) ; the poster child for carpal tunnel syndrome
        (javascript         ; all(hope(abandon(ye(who(enter(here))))))
-        +lsp +tree-sitter)
+        +lsp 
+        +tree-sitter)
        ;;julia             ; a better, faster MATLAB
        ;;kotlin            ; a better, slicker Java(Script)
        ;;latex             ; writing papers in Emacs has never been so fun
@@ -184,7 +187,7 @@
        (ruby
         +tree-sitter
         +lsp
-        +rails)       ; 1.step {|i| p "Ruby is #{i.even? ? 'love' : 'life'}"}
+        +rails)            ; 1.step {|i| p "Ruby is #{i.even? ? 'love' : 'life'}"}
        (rust +lsp)         ; Fe2O3.unwrap().unwrap().unwrap().unwrap()
        ;;scala             ; java, but good
        ;;(scheme +guile)   ; a fully conniving family of lisps

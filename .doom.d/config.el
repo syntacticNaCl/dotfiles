@@ -33,16 +33,16 @@
 ;; change `org-directory'. It must be set before org loads!
 (after! org
   (setq
-        org-directory "~/Sync/org/"
-        org-todo-keywords '((sequence "TODO(t)" "INPROGRESS(i)" "WAIT(w)" "|" "DONE(d)" "CANCELLED(c)"))
-        org-todo-keyword-faces
-        '(("TODO" :foreground "#7c7c75" :weight normal :underline t)
-          ("WAIT" :foreground "#9f7efe" :weight normal :underline t)
-          ("INPROGRESS" :foreground "#0098dd" :weight normal :underline t)
-          ("DONE" :foreground "#50a14f" :weight normal :underline t)
-          ("CANCELLED" :foreground "#ff6480" :weight normal :underline t))
-        org-log-done 'time
-        org-agenda-files (list "~/Sync/org/agenda.org" "~/Sync/org/done.org")))
+   org-directory "~/Sync/org/"
+   org-todo-keywords '((sequence "TODO(t)" "INPROGRESS(i)" "WAIT(w)" "|" "DONE(d)" "CANCELLED(c)"))
+   org-todo-keyword-faces
+   '(("TODO" :foreground "#7c7c75" :weight normal :underline t)
+     ("WAIT" :foreground "#9f7efe" :weight normal :underline t)
+     ("INPROGRESS" :foreground "#0098dd" :weight normal :underline t)
+     ("DONE" :foreground "#50a14f" :weight normal :underline t)
+     ("CANCELLED" :foreground "#ff6480" :weight normal :underline t))
+   org-log-done 'time
+   org-agenda-files (list "~/Sync/org/agenda.org" "~/Sync/org/done.org")))
 
 
 ;; This determines the style of line numbers in effect. If set to `nil', line
@@ -85,6 +85,11 @@
    evil-escape-delay 0.2
    evil-escape-unordered-key-sequence "true"))
 
+;; Adds avy binding
+(map! :leader
+      :desc "Jump to char" "f /" #'avy-goto-char
+      :desc "Jump to char" "j j" #'avy-goto-char)
+
 ;; (after! company
 ;;   (setq company-idle-delay 0.5
 ;;         company-minimum-prefix-length 2)
@@ -94,12 +99,12 @@
 
 (display-time-mode 1)                             ; Enable time in the mode-line
 
-; (unless (string-match-p "^Power N/A" (battery))   ; On laptops...
-;   (display-battery-mode 1))                       ; it's nice to know how much power you have
+(unless (string-match-p "^Power N/A" (battery))   ; On laptops...
+  (display-battery-mode 1))                       ; it's nice to know how much power you have
 
 (global-subword-mode 1)
 
-; Projectile
+;; Projectile
 (setq
  projectile-project-search-path '("~/code/github.com"))
 
@@ -117,6 +122,13 @@
   '(add-hook 'flycheck-mode-hook #'flycheck-golangci-lint-setup))
 
 (setq flycheck-golangci-lint-fast t)
+
+;; Disable semgrep-ls
+(setq lsp-disabled-clients '(semgrep-ls))
+
+;; ignore cache
+(with-eval-after-load 'lsp-mode
+  (add-to-list 'lsp-file-watch-ignored-directories "[/\\\\]cache\\'"))
 
 (custom-set-variables
  '(initial-frame-alist (quote ((fullscreen . maximized)))))

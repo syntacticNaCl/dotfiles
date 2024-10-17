@@ -38,7 +38,7 @@
        ;;hydra
        indent-guides       ; highlighted indent columns
        (ligatures +extras) ; ligatures and symbols to make your code pretty again
-       minimap             ; show a map of the code on the side
+       ;; minimap             ; show a map of the code on the side
        modeline            ; snazzy, Atom-inspired modeline, plus API
        nav-flash           ; blink cursor line after big motions
        ;;neotree           ; a project drawer, like NERDTree for vim
@@ -70,8 +70,8 @@
 
        :emacs
        (dired              ; making dired pretty [functional]
-        +icons)             ; fancy icons
-        ;+ranger)           ; ranger dired
+        +icons)            ; fancy icons
+       ;; +ranger)         ; ranger dired
        electric            ; smarter, keyword-based electric-indent
        (ibuffer +icons)    ; interactive buffer management
        undo                ; persistent, smarter undo for your inevitable mistakes
@@ -84,7 +84,7 @@
        vterm               ; the best terminal emulation in Emacs
 
        :checkers
-       (syntax)            ; tasing you for every semicolon you forget
+       syntax              ; tasing you for every semicolon you forget
        (spell +aspell)     ; tasing you for misspelling mispelling
        ;;grammar           ; tasing grammar mistake every you make
 
@@ -96,8 +96,8 @@
        editorconfig        ; let someone else argue about tabs vs spaces
        ;;ein               ; tame Jupyter notebooks with emacs
        (eval +overlay)     ; run code, run (also, repls)
-       gist                ; interacting with github gists
-       (lookup              ; navigate your code and its documentation
+       ;; gist             ; interacting with github gists
+       (lookup             ; navigate your code and its documentation
         +dictionary
         +docsets)
        lsp                 ; M-x vscode
@@ -106,7 +106,7 @@
        ;;pass              ; password manager for nerds
        pdf                 ; pdf enhancements
        ;;prodigy           ; FIXME managing external services & code builders
-       rgb                 ; creating color strings
+       ;; rgb              ; creating color strings
        ;;taskrunner        ; taskrunner for all your projects
        terraform           ; infrastructure as code
        ;; tmux             ; an API for interacting with tmux
@@ -140,7 +140,7 @@
        ;;fstar             ; (dependent) types and (monadic) effects and Z3
        ;;gdscript          ; the language you waited for
        (go                 ; the hipster dialect
-        +lsp 
+        +lsp
         +tree-sitter)
        ;;(haskell +dante)  ; a language that's lazier than I am
        ;;hy                ; readability of scheme w/ speed of python
@@ -148,7 +148,7 @@
        json                ; At least it ain't XML
        ;;(java +meghanada) ; the poster child for carpal tunnel syndrome
        (javascript         ; all(hope(abandon(ye(who(enter(here))))))
-        +lsp 
+        +lsp
         +tree-sitter)
        ;;julia             ; a better, faster MATLAB
        ;;kotlin            ; a better, slicker Java(Script)
@@ -161,24 +161,24 @@
        ;;nix               ; I hereby declare "nix geht mehr!"
        ;;ocaml             ; an objective camel
        (org                ; organize your plain life in plain text
-         +pretty           ; make it pretty
-         +dragndrop        ; enable drag and drop support
-         +hugo             ; enable hugo support
-         +pandoc           ; export-with-pandoc support
-         +gnuplot          ; who doesn't like pretty pictures
-         +present          ; using org-mode for presentations
-         +pomodoro         ; be fruitful with the tomato technique
-         +journal          ; journal time
-         +noter            ; enhanced PDF notetaking
-         +jupyter          ; ipython/jupyter support for babel
-         +roam2)           ; wander around notes
+        +pretty            ; make it pretty
+        +dragndrop         ; enable drag and drop support
+        +hugo              ; enable hugo support
+        +pandoc            ; export-with-pandoc support
+        +gnuplot           ; who doesn't like pretty pictures
+        +present           ; using org-mode for presentations
+        +pomodoro          ; be fruitful with the tomato technique
+        +journal           ; journal time
+        +noter             ; enhanced PDF notetaking
+        +jupyter           ; ipython/jupyter support for babel
+        +roam2)            ; wander around notes
        ;;php               ; perl's insecure younger brother
        ;;plantuml          ; diagrams for confusing people more
        ;;purescript        ; javascript, but functional
        (python             ; beautiful is better than ugly
-         +lsp 
-         +pyright
-         +pyenv)
+        +lsp
+        +pyright
+        +pyenv)
        ;;qt                ; the 'cutest' gui framework ever
        ;;racket            ; a DSL for DSLs
        ;;raku              ; the artist formerly known as perl6
@@ -196,7 +196,9 @@
        ;;solidity          ; do you need a blockchain? No.
        ;;swift             ; who asked for emoji variables?
        ;;terra             ; Earth and Moon in alignment for performance.
-       web                 ; the tubes
+       (web
+        +lsp
+        +tree-sitter)      ; the tubes
        yaml                ; JSON, but readable
        ;;zig               ; C, but simpler
 

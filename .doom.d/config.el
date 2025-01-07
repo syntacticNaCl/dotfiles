@@ -56,7 +56,7 @@
 
 (setq undo-limit 80000000                         ; Raise undo-limit to 80Mb
       evil-want-fine-undo t                       ; By default while in insert all changes are one big blob. Be more granular
-      auto-save-default t                         ; Nobody likes to loose work, I certainly don't
+      auto-save-default t                         ; Nobody likes to lose work, I certainly don't
       truncate-string-ellipsis "…"                ; Unicode ellispis are nicer than "...", and also save /precious/ space
       password-cache-expiry nil                   ; I can trust my computers ... can't I?
       ;; scroll-preserve-screen-position 'always     ; Don't have `point' jump around
@@ -96,32 +96,17 @@
 ;;   (setq company-show-quick-access t)
 ;;   (add-hook 'evil-normal-state-entry-hook #'company-abort)) ;; make aborting less annoying.
 
-
 (display-time-mode 1)                             ; Enable time in the mode-line
 
 (unless (string-match-p "^Power N/A" (battery))   ; On laptops...
   (display-battery-mode 1))                       ; it's nice to know how much power you have
 
+;; https://www.gnu.org/software/emacs/manual/html_node/ccmode/Subword-Movement.html
 (global-subword-mode 1)
 
 ;; Projectile
 (setq
  projectile-project-search-path '("~/code/github.com"))
-
-(add-hook 'python-mode-hook #'format-all-mode)
-(add-hook 'python-mode-hook 'anaconda-mode 'anaconda-eldoc-mode)
-(add-hook 'shell-mode-hook #'format-all-mode)
-
-(add-hook 'go-mode-hook #'lsp-deferred)
-(defun lsp-go-install-save-hooks ()
-  (add-hook 'before-save-hook #'lsp-format-buffer t t)
-  (add-hook 'before-save-hook #'lsp-organize-imports t t))
-(add-hook 'go-mode-hook #'lsp-go-install-save-hooks)
-
-(eval-after-load 'flycheck
-  '(add-hook 'flycheck-mode-hook #'flycheck-golangci-lint-setup))
-
-(setq flycheck-golangci-lint-fast t)
 
 ;; Disable semgrep-ls
 (setq lsp-disabled-clients '(semgrep-ls))

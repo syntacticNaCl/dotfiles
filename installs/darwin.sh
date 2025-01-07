@@ -90,9 +90,9 @@ echo "Installing xcode"
 xcode-select --install
 
 echo "Installing Emacs"
-brew tap railwaycat/emacsmacport
-brew install emacs-mac --with-modules
-ln -s /usr/local/opt/emacs-mac/Emacs.app /Applications/Emacs.app
+brew tap d12frosted/emacs-plus
+brew install emacs-plus
+ln -s /usr/local/opt/emacs-plus/Emacs.app /Applications/Emacs.app
 
 echo "Cleaning up..."
 brew cleanup

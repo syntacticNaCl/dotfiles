@@ -99,7 +99,6 @@
        (eval +overlay)     ; run code, run (also, repls)
        lookup              ; navigate your code and its documentation
        (lsp               ; M-x vscode
-        +eglot
         +peek)
        magit             ; a git porcelain for Emacs
        make              ; run make tasks from Emacs
@@ -170,7 +169,7 @@
        (python             ; beautiful is better than ugly
         +lsp
         +pyright
-        +pyenv)
+        +tree-sitter)
        ;;qt                ; the 'cutest' gui framework ever
        ;;racket            ; a DSL for DSLs
        ;;raku              ; the artist formerly known as perl6

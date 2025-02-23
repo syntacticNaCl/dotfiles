@@ -111,6 +111,13 @@
 ;; Disable semgrep-ls
 (setq lsp-disabled-clients '(semgrep-ls))
 
+;; hack to fix lsp-mode errors; https://github.com/emacs-lsp/lsp-mode/issues/3577
+;; this just loads lsp-mode on startup instead of lazy loading
+(require 'lsp-mode)
+(add-hook 'terraform-mode #'lsp)
+(add-hook 'go-mode #'lsp)
+(add-hook 'python-mode #'lsp)
+
 ;; ignore cache
 (with-eval-after-load 'lsp-mode
   (add-to-list 'lsp-file-watch-ignored-directories "[/\\\\]cache\\'"))

@@ -40,7 +40,6 @@ apps=(
 	ripgrep
 	fd
 	bat
-	neofetch
 )
 
 echo "Installing languages and dependencies..."
@@ -84,8 +83,7 @@ sudo apt-get install -y \
 	fzf \
 	ripgrep \
 	fd \
-	bat \
-	neofetch
+	bat
 
 echo "Building emacs dependencies..."
 sudo apt-get build-dep emacs

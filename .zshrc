@@ -15,11 +15,6 @@ source ~/.zshenv
 #------------------------------------------
 # STARTUP
 #------------------------------------------
-if ! command -v neofetch &> /dev/null; then
-    neofetch
-fi
-
-
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 eval "$(starship init zsh)"

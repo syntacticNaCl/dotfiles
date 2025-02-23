@@ -8,7 +8,7 @@
 
 dir=~/dotfiles                    # dotfiles directory
 olddir=~/dotfiles_old             # old dotfiles backup directory
-files=".zpreztorc .zprofile .zshenv .zshrc .zprezto .zsh .tmux.conf .spacemacs .config/nvim .config/neofetch"    # list of files/folders to symlink in homedir
+files=".zpreztorc .zprofile .zshenv .zshrc .zprezto .zsh .tmux.conf .config/nvim"    # list of files/folders to symlink in homedir
 
 ##########
 

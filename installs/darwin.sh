@@ -32,7 +32,6 @@ binaries=(
     jq
     libtool
     libxml2
-    neofetch
     neovim
     ngrep
     node
@@ -46,7 +45,6 @@ binaries=(
     tmux
     vim
     wget
-    youtube-dl
 )
 
 casks=(
@@ -55,11 +53,8 @@ casks=(
     firefox
     gimp
     iterm2
-    libreoffice
     rectangle
-    standard-notes
     tableplus
-    textmate
     visual-studio-code
     vlc
 )

@@ -15,6 +15,7 @@ brew update
 # Install homebrew recipes
 binaries=(
     aspell
+    asdf
     bat
     cmake
     cowsay
@@ -27,6 +28,8 @@ binaries=(
     gnu-time
     gnupg
     gotop
+    go
+    golangci-lint
     imap-uw
     irssi
     jq
@@ -45,6 +48,7 @@ binaries=(
     tmux
     vim
     wget
+    zsh-autosuggestions
 )
 
 casks=(
@@ -62,6 +66,10 @@ casks=(
 fonts=(
     font-powerline-symbols
     font-source-code-pro
+    font-fira-code-nerd-front
+    font-fira-mono-nerd-front
+    font-symbols-only-nerd-font
+    font-mononoki-nerd-font
 )
 
 echo "Installing binaries..."
@@ -78,7 +86,6 @@ echo "Installing casks..."
 brew install --cask ${casks[@]}
 
 echo "Installing fonts..."
-brew tap homebrew/cask-fonts
 brew install --cask ${fonts[@]}
 
 echo "Installing xcode"
@@ -88,6 +95,7 @@ echo "Installing Emacs"
 brew tap d12frosted/emacs-plus
 brew install emacs-plus
 ln -s /usr/local/opt/emacs-plus/Emacs.app /Applications/Emacs.app
+osascript -e 'tell application "Finder" to make alias file to posix file "/opt/homebrew/opt/emacs-plus@30/Emacs.app" at posix file "/Applications" with properties {name:"Emacs.app"}'
 
 echo "Cleaning up..."
 brew cleanup

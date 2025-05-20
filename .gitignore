@@ -4,7 +4,7 @@
 .vim/docs
 .zsh-update
 .config/nvim/plugged
-.config/nvim/autoload/plugged
+.config/nvim/autoload
 scripts/.*.sh
 scripts/vpn*
 

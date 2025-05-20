@@ -38,6 +38,10 @@ ln -sf $dir/emacs-private/functions ~/.emacs-d/private/functions
 ln -sf $dir/emacs-private/local ~/.emacs-d/private/local
 ln -sf $dir/emacs-private/snippets ~/.emacs-d/private/snippets
 
+# Vim plug
+curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+
 ## Doom emacs
 git clone --depth 1 https://github.com/doomemacs/doomemacs ~/.emacs.d
 ln -s $dir/.doom.d ~/.doom.d

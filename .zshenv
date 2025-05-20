@@ -21,13 +21,18 @@ export PATH=$HOME/.local/bin:$PATH
 ## Langs
 export GOPATH=$HOME/go
 export PATH=$PATH:$GOPATH/bin
+. "$HOME/.cargo/env"
 
 ## Doom emacs
 export PATH=$PATH:$HOME/.emacs.d/bin
 
+## ASDF
+export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
+
 # Add homebrew to the completion path
 if type brew &>/dev/null; then
   FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
+  FPATH=${ASDF_DATA_DIR:-$HOME/.asdf}/completions:$FPATH
 
   autoload -Uz compinit
   compinit
@@ -36,5 +41,3 @@ fi
 # Fix gpg errors
 GPG_TTY=$(tty)
 export GPG_TTY
-
-. "$HOME/.cargo/env"

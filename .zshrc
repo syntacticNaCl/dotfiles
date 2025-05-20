@@ -18,5 +18,4 @@ source ~/.zshenv
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 eval "$(starship init zsh)"
-
-. /usr/local/opt/asdf/libexec/asdf.sh
+source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh

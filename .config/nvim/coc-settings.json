@@ -28,5 +28,6 @@
     ],
     "eslint.format.enable": true,
     "eslint.autoFixOnSave": false,
-    "eslint.codeActionsOnSave.mode": "problems"
+    "eslint.codeActionsOnSave.mode": "problems",
+    "snippets.ultisnips.pythonPrompt": false
 }

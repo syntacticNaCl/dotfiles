@@ -93,7 +93,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
 	Plug 'peitalin/vim-jsx-typescript'
 
 " Themes
-	Plug 'arcticicestudio/nord-vim', { 'branch': 'develop' }
+	Plug 'arcticicestudio/nord-vim'
 	Plug 'trusktr/seti.vim'
 	Plug 'junegunn/seoul256.vim'
 	Plug 'powerline/fonts', { 'do': './install.sh' }

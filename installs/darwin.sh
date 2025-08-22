@@ -7,6 +7,9 @@
 if test ! $(which brew); then
 	echo "Installing homebrew..."
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
+    # Homebrew is already in .zprofile; just need it to work during install
+    eval "$(/opt/homebrew/bin/brew shellenv)"
 fi
 
 # Update homebrew recipes
@@ -35,6 +38,7 @@ binaries=(
     jq
     libtool
     libxml2
+    luarocks
     neovim
     ngrep
     node
@@ -44,6 +48,7 @@ binaries=(
     ruby
     starship
     svn #unfortunately needed for cask-fonts
+    tldr
     tig
     tmux
     vim

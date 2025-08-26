@@ -12,7 +12,6 @@ vim.g.have_nerd_font = true
 -- [[ Import Config ]]
 require 'config.autocmds'
 require 'config.keymaps'
-require 'config.lsp'
 require 'config.options'
 
 -- [[ Install `lazy.nvim` plugin manager ]]
@@ -45,6 +44,7 @@ rtp:prepend(lazypath)
 require('lazy').setup({
   require 'plugins.ai',
   require 'plugins.coding',
+  require 'plugins.lsp',
   require 'plugins.snacks',
   require 'plugins.treesitter',
   require 'plugins.ui',

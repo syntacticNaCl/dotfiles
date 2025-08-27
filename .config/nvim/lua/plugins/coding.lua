@@ -16,6 +16,8 @@ return {
       local lint = require 'lint'
       lint.linters_by_ft = {
         markdown = { 'markdownlint' },
+        python = { 'ruff' },
+        ruby = { 'ruby' },
       }
 
       -- To allow other plugins to add linters to require('lint').linters_by_ft,
@@ -195,14 +197,14 @@ return {
         desc = 'Debug: Step Out',
       },
       {
-        '<leader>b',
+        '<leader>db',
         function()
           require('dap').toggle_breakpoint()
         end,
         desc = 'Debug: Toggle Breakpoint',
       },
       {
-        '<leader>B',
+        '<leader>dB',
         function()
           require('dap').set_breakpoint(vim.fn.input 'Breakpoint condition: ')
         end,

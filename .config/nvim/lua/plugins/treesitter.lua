@@ -29,6 +29,7 @@ return {
         'python',
         'query',
         'regex',
+        'ruby',
         'sql',
         'typescript',
         'vim',

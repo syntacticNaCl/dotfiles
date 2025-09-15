@@ -149,6 +149,15 @@ return {
         { '<leader>h', group = 'Git [H]unk', mode = { 'n', 'v' } },
       },
     },
+    keys = {
+      {
+        '<leader>?',
+        function()
+          require('which-key').show { global = false }
+        end,
+        desc = 'Buffer Local Keymaps (which-key)',
+      },
+    },
   },
 
   { -- Fuzzy Finder (files, lsp, etc)
@@ -160,6 +169,7 @@ return {
       'nvim-telescope/telescope-fzf-native.nvim',
       'nvim-telescope/telescope-ui-select.nvim',
       'nvim-telescope/telescope-file-browser.nvim',
+      'nvim-telescope/telescope-project.nvim',
 
       -- Useful for getting pretty icons, but requires a Nerd Font.
       { 'nvim-tree/nvim-web-devicons', enabled = vim.g.have_nerd_font },
@@ -210,6 +220,8 @@ return {
             '--line-number',
             '--column',
             '--smart-case',
+            '--glob',
+            '!**/.git/*',
           },
           mappings = {
             i = { ['<c-enter>'] = 'to_fuzzy_refine' },
@@ -222,6 +234,8 @@ return {
             hidden = true, -- Show hidden files
             no_ignore = true, -- Show files ignored by .gitignore
             follow = true, -- Follow symlinks
+            -- `hidden = true` will still show the inside of a `.git` as it's not `.gitignore'd`
+            find_command = { 'rg', '--files', '--hidden', '--glob', '!**/.git/*' },
           },
           live_grep = {
             additional_args = function()
@@ -240,11 +254,15 @@ return {
       pcall(require('telescope').load_extension, 'fzf')
       pcall(require('telescope').load_extension, 'ui-select')
       pcall(require('telescope').load_extension, 'file_browser')
+      pcall(require('telescope').load_extension 'project')
 
       -- See `:help telescope.builtin`
       local builtin = require 'telescope.builtin'
 
       vim.keymap.set('n', '<leader>ff', builtin.find_files, { desc = '[F]ind [F]iles' })
+      vim.keymap.set('n', '<leader>fp', function()
+        require('telescope').extensions.project.project {}
+      end, { desc = '[F]ind [p]roject' })
       vim.keymap.set('n', '<leader>fg', builtin.live_grep, { desc = '[F]ind by [G]rep' })
       vim.keymap.set('n', '<leader>fd', function()
         require('telescope').extensions.file_browser.file_browser {
@@ -358,5 +376,19 @@ return {
       -- ... and there is more!
       --  Check out: https://github.com/echasnovski/mini.nvim
     end,
+  },
+  {
+    'folke/flash.nvim',
+    event = 'VeryLazy',
+    ---@type Flash.Config
+    opts = {},
+  -- stylua: ignore
+  keys = {
+    { "s", mode = { "n", "x", "o" }, function() require("flash").jump() end, desc = "Flash" },
+    { "S", mode = { "n", "x", "o" }, function() require("flash").treesitter() end, desc = "Flash Treesitter" },
+    { "r", mode = "o", function() require("flash").remote() end, desc = "Remote Flash" },
+    { "R", mode = { "o", "x" }, function() require("flash").treesitter_search() end, desc = "Treesitter Search" },
+    { "<leader>s", mode = { "c" }, function() require("flash").toggle() end, desc = "Toggle Flash Search" },
+  },
   },
 }

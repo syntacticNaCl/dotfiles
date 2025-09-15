@@ -19,6 +19,7 @@ brew update
 binaries=(
     aspell
     asdf
+    bash # important to ensure an up-to-date bash version is installed
     bat
     cmake
     cowsay

@@ -9,6 +9,8 @@ vim.g.maplocalleader = ' '
 -- Set to true if you have a Nerd Font installed and selected in the terminal
 vim.g.have_nerd_font = true
 
+vim.g.python3_host_prog = '~/.asdf/shims/python3'
+
 -- [[ Import Config ]]
 require 'config.autocmds'
 require 'config.keymaps'

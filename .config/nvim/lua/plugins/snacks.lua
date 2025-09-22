@@ -48,7 +48,10 @@ return {
       {
         '<leader>/',
         function()
-          Snacks.picker.grep()
+          Snacks.picker.grep {
+            hidden = true,
+            follow = true,
+          }
         end,
         desc = 'Grep',
       },
@@ -74,7 +77,7 @@ return {
         desc = 'File Explorer',
       },
       {
-        '<leader>.',
+        '<leader>x',
         function()
           Snacks.scratch()
         end,

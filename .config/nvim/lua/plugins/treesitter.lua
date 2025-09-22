@@ -22,6 +22,7 @@ return {
         'http',
         'java',
         'javascript',
+        'json',
         'lua',
         'luadoc',
         'markdown',

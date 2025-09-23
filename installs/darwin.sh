@@ -28,6 +28,7 @@ binaries=(
     fd
     fortune
     fzf
+    deno
     git
     gnu-time
     gnupg

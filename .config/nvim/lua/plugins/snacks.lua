@@ -6,7 +6,7 @@ return {
     ---@type snacks.Config
     opts = {
       bigfile = { enabled = true },
-      dashboard = { enabled = true },
+      dashboard = { example = 'doom' },
       explorer = { enabled = false },
       gitbrowse = { enabled = true },
       lazygit = { enabled = true },
@@ -108,7 +108,10 @@ return {
       {
         '<leader>ff',
         function()
-          Snacks.picker.files()
+          Snacks.picker.files {
+            hidden = true,
+            follow = true,
+          }
         end,
         desc = 'Find Files',
       },

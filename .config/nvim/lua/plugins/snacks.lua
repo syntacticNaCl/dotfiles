@@ -1,3 +1,5 @@
+---@module 'snacks'
+
 return {
   {
     'folke/snacks.nvim',
@@ -6,7 +8,7 @@ return {
     ---@type snacks.Config
     opts = {
       bigfile = { enabled = true },
-      dashboard = { example = 'doom' },
+      dashboard = { example = 'startify' },
       explorer = { enabled = false },
       gitbrowse = { enabled = true },
       lazygit = { enabled = true },

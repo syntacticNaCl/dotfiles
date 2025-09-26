@@ -191,9 +191,7 @@ return {
       {
         '<leader>gg',
         function()
-          ---@type snacks.lazygit.Config
-          ---@param opts? snacks.lazygit.Config
-          Snacks.lazygit.open(opts)
+          Snacks.lazygit.open()
         end,
         desc = 'Toggle Lazygit',
       },

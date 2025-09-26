@@ -19,3 +19,4 @@ source ~/.zshenv
 
 eval "$(starship init zsh)"
 source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"

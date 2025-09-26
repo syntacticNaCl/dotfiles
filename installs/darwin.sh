@@ -38,6 +38,7 @@ binaries=(
     imap-uw
     irssi
     jq
+    lazygit
     libtool
     libxml2
     luarocks
@@ -77,6 +78,7 @@ fonts=(
     font-fira-mono-nerd-front
     font-symbols-only-nerd-font
     font-mononoki-nerd-font
+    font-maple-mono
 )
 
 echo "Installing binaries..."

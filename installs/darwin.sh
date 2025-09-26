@@ -64,7 +64,7 @@ casks=(
     bitwarden
     firefox
     gimp
-    iterm2
+    ghostty
     rectangle
     tableplus
     visual-studio-code

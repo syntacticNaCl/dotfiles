@@ -2,6 +2,7 @@
 # Git aliases
 # -------------------------------------------------------------------
 
+alias g='git'
 alias ga='git add'
 alias gaa='git add -A'
 alias gpush='git push'
@@ -48,43 +49,6 @@ alias dce='docker-compose exec'
 alias dcu='docker-compose up -d'
 alias dcd='docker-compose down'
 
-# more in functions.zsh
-
-# -------------------------------------------------------------------
-# Mercurial aliases
-# -------------------------------------------------------------------
-
-alias hga='hg add'
-alias hgc='hg commit'
-alias hgp='hg push'
-alias hgs='hg status'
-alias hgbc='hg branch -C' # clean reset
-
-# -------------------------------------------------------------------
-# Cordova aliases
-# -------------------------------------------------------------------
-
-alias cba='cordova build android'
-alias cea='cordova emulate android'
-alias crdroid='cordova platform rm android'
-alias cadroid='cordova platform add android'
-alias crios='cordova platform rm ios'
-alias caios='cordova platform add ios'
-
-# -------------------------------------------------------------------
-# Sencha aliases
-# -------------------------------------------------------------------
-
-alias swstart="sencha web start"
-alias shelp="sencha help"
-alias st="sencha -sdk ~/Downloads/touch-2.1.1 "
-alias stg="sencha generate"
-alias stgc="sencha generate controller"
-alias stgv="sencha generate view"
-alias stgm="sencha generate model"
-alias sab="sencha app build"
-alias sabp="sencha app build production"
-
 # -------------------------------------------------------------------
 # Tmux aliases
 # -------------------------------------------------------------------
@@ -101,6 +65,12 @@ alias vi="nvim"
 alias vim="nvim"
 alias svi="sudo nvim" # Run nvim as super user
 alias svim="sudo nvim" # Run nvim as super user
+
+# -------------------------------------------------------------------
+# Claude Code
+# -------------------------------------------------------------------
+alias cl="claude"
+alias clusage="bunx ccusage"
 
 # -------------------------------------------------------------------
 # Zsh aliases
@@ -121,12 +91,10 @@ alias vifi='vim $(fzfi)'
 alias grep='grep --color=auto' # Always highlight grep search term
 alias df='df -h'            # Disk free, in gigabytes, not bytes
 alias du='du -h -c'         # Calculate total disk usage for a folder
-alias cls='clear;echo "Currently logged in on $(tty), as $(whoami) in directory $(pwd)."'
-alias cl='clear'
 alias C='clear'
 alias tt='tt++ $HOME/.ttconf'
 
-#Directory traversing
+# Directory traversing
 alias ..='cd ..'
 alias ...='cd ../../../'
 alias ....='cd ../../../../'
@@ -136,14 +104,7 @@ alias .5='cd ../../../../..'
 alias /='cd /'
 alias ~='cd ~'
 
-# Shortcuts
-alias d="cd ~/Documents"
-alias dl="cd ~/Downloads"
-alias dt="cd ~/Desktop"
-alias p="cd ~/projects"
-alias h="history"
-
-#Dir Lists
+# Dir Lists
 alias lsa='ls -lah'
 alias lsd="ls -ld *" # show directories
 alias tree="ls -R | grep ":$" | sed -e 's/:$//' -e 's/[^-][^\/]*\//--/g' -e 's/^/ /' -e 's/-/|/'"
@@ -178,30 +139,6 @@ alias exip='curl ip.appspot.com'
 alias sniff="sudo ngrep -d 'en1' -t '^(GET|POST) ' 'tcp and port 80'"
 alias httpdump="sudo tcpdump -i en1 -n -s 0 -w - | grep -a -o -E \"Host\: .*|GET \/.*\""
 
-#Web Serve
-alias macvhost="sudo vim /etc/apache2/extra/httpd-vhosts.conf"
-
-#Composer
-alias composer="php /usr/local/bin/composer"
-
-#Grunt
-alias gruntit="npm install grunt --save-dev"
-
-#Compass watch
-alias bcwatch="bundle exec compass watch"
-
-#Vagrant
-alias vprovision="vagrant upgrade --provision"
-
-#Node
-alias npmi="sudo npm install"
-
-#Bower
-alias bowi="bower install"
-
-#Dev setup
-alias s8init="sudo npm install && bower install"
-
 # -------------------------------------------------------------------
 # Utilities
 # -------------------------------------------------------------------
@@ -230,14 +167,9 @@ alias showfiles="defaults write com.apple.finder AppleShowAllFiles YES"
 alias root='sudo -i'
 alias su='sudo -i'
 
-# apache (mac) #
-alias arestart='sudo apachectl restart'
-alias astart='sudo apachectl start'
-alias astatus='sudo apachectl status'
-alias astop='sudo apachectl stop'
-
 # Get OS X Software Updates, and update installed Ruby gems, Homebrew, npm, and their installed packages
-alias update='sudo softwareupdate -i -a; brew update; brew upgrade; brew cleanup; npm install npm -g; npm update -g; sudo gem update --system; sudo gem update'
+alias updateall='sudo softwareupdate -i -a; brew update; brew upgrade; brew cleanup; npm install npm -g; npm update -g; sudo gem update --system; sudo gem update'
+alias update='brew update; brew upgrade; brew cleanup; npm install npm -g; npm update -g; sudo gem update --system; sudo gem update'
 
 # Lock the screen (when going AFK)
 alias afk="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend"
@@ -250,15 +182,8 @@ alias setJdk6='export JAVA_HOME=$(/usr/libexec/java_home -v 1.6)'
 alias setJdk7='export JAVA_HOME=$(/usr/libexec/java_home -v 1.7)'
 alias setJdk8='export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)'
 
-# Update zshrc changes
-alias rzsh='source ~/.zshrc'
-alias R='source ~/.zshrc'
-
 # Clear that download log
 alias cleardl="sqlite3 ~/Library/Preferences/com.apple.LaunchServices.QuarantineEventsV* 'delete from LSQuarantineEvent'"
-
-# Fix pianobar issue; shushes errors until this bit is resolved
-alias pianobar="pianobar 2>/dev/null"
 
 # -------------------------------------------------------------------
 # Fun stuff
@@ -278,10 +203,8 @@ alias fatcats= 'telnet fatcatsbbs.com'
 alias eZ='vim ~/dotfiles/.zsh'
 alias eT='vim ~/dotfiles/.tmux.conf'
 alias eI='vim ~/dotfiles/.i3/config'
-alias eV='vim ~/dotfiles/.nvim/.nvimrc'
-alias cdD='vim ~/dotfiles'
-alias cdV='vim ~/dotfiles/.nvim'
-alias cdI='vim ~/dotfiles/.i3'
+alias eV='vim ~/dotfiles/.config/nvim/init.lua'
+alias eD='vim ~/dotfiles'
 
 # -------------------------------------------------------------------
 # Livestreamer 
@@ -290,11 +213,3 @@ alias twit='livestreamer http://www.ustream.tv/leolaporte best'
 alias nasa='livestreamer http://www.ustream.tv/nasahdtv best'
 alias nasaearth='livestreamer http://www.ustream.tv/channel/iss-hdev-payload best'
 alias iss='livestreamer http://www.ustream.tv/channel/live-iss-stream best'
-
-
-# -------------------------------------------------------------------
-# News/Music
-# -------------------------------------------------------------------
-alias news=newsbeuter
-alias pods=podsbeuter
-alias music=ncmpcpp

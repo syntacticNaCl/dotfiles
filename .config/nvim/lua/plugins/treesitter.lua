@@ -10,6 +10,8 @@ return {
       ensure_installed = {
         'bash',
         'c',
+        'css',
+        'csv',
         'cmake',
         'diff',
         'editorconfig',
@@ -32,6 +34,8 @@ return {
         'regex',
         'ruby',
         'sql',
+        'toml',
+        'tsx',
         'typescript',
         'vim',
         'vimdoc',

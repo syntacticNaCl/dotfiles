@@ -15,12 +15,18 @@ fi
 # Update homebrew recipes
 brew update
 
+# Taps
+taps=(
+  oven-sh/bun
+)
+
 # Install homebrew recipes
 binaries=(
     aspell
     asdf
     bash # important to ensure an up-to-date bash version is installed
     bat
+    bun
     cmake
     cowsay
     coreutils
@@ -56,6 +62,7 @@ binaries=(
     tmux
     vim
     wget
+    yamllint
     zsh-autosuggestions
 )
 
@@ -80,6 +87,9 @@ fonts=(
     font-mononoki-nerd-font
     font-maple-mono
 )
+
+echo "Adding taps..."
+brew tap ${taps[@]}
 
 echo "Installing binaries..."
 brew install ${binaries[@]}

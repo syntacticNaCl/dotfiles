@@ -11,10 +11,11 @@ return {
   end,
   keys = {
     {
-      '<leader>cp',
+      '<leader>mp',
       function()
         require('peek').open()
       end,
+      desc = 'Markdown Preview',
     },
   },
 }

@@ -33,6 +33,14 @@ vim.opt.softtabstop = 4
 vim.opt.shiftwidth = 4
 vim.opt.expandtab = true
 
+-- File
+vim.opt.fixendofline = true
+vim.opt.endofline = true
+
+-- Encoding
+vim.opt.encoding = 'utf-8'
+vim.opt.fileencoding = 'utf-8'
+
 -- Search
 vim.opt.hlsearch = true
 vim.opt.incsearch = true

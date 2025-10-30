@@ -2,6 +2,9 @@ return {
   'folke/which-key.nvim',
   event = 'VimEnter',
   opts = {
+    preset = 'helix',
+    debug = vim.uv.cwd():find 'which%-key',
+    win = {},
     delay = 0,
     icons = {
       mappings = vim.g.have_nerd_font,
@@ -37,10 +40,15 @@ return {
       },
     },
     spec = {
-      { '<leader>f', group = '[F]ind' },
+      { '<leader>b', group = '[B]uffer' },
+      { '<leader>c', group = '[C]ode' },
       { '<leader>d', group = '[D]ebug' },
+      { '<leader>f', group = '[F]ile' },
+      { '<leader>g', group = '[G]it' },
+      { '<leader>h', group = '[H]elp' },
+      { '<leader>s', group = '[S]earch' },
       { '<leader>t', group = '[T]oggle' },
-      { '<leader>h', group = 'Git [H]unk', mode = { 'n', 'v' } },
+      { '<leader>w', group = '[W]indow' },
     },
   },
   keys = {

@@ -9,8 +9,15 @@ fi
 source ~/.zsh/aliases.zsh
 source ~/.zsh/functions.zsh
 source ~/.zsh/config.zsh
-source ~/.zsh_secrets
 source ~/.zshenv
+
+is_tmux_or_ghostty() {
+    [ -n "$TMUX" ] || [ "$TERM_PROGRAM" = "ghostty" ]
+}
+
+if is_tmux_or_ghostty; then
+    source ~/.zsh_secrets
+fi
 
 #------------------------------------------
 # STARTUP
